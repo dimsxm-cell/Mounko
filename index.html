@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="MOUNKO, mobilier d'extérieur à Jarry (Guadeloupe) : salons de jardin, tables, daybeds, bains de soleil, fauteuils suspendus et parasols. 300 modèles, devis sur WhatsApp ou WeChat.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MOUNKO Outdoor Furniture">
+<meta property="og:description" content="Mobilier d'extérieur à Jarry, Guadeloupe. 300 modèles, devis sur WhatsApp.">
+<meta property="og:image" content="img/hero.webp">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#0f6b6b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%;display:block}[hidden]{display:none!important}</style>
+<title>MOUNKO Outdoor Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: full-bleed photo hero, then a browsable catalogue grid driven by collection filters; contact band with real QR codes. */
+:root{
+  --bg:#f4f7f6;          /* sel marin : blanc teinté lagon */
+  --surface:#ffffff;
+  --ink:#10292e;         /* bleu lagon profond */
+  --muted:#5a6f72;
+  --line:#d6e0df;
+  --lagon:#0f6b6b;       /* accent : turquoise profond */
+  --lagon-ink:#ffffff;
+  --teck:#7a3e22;        /* brun de la marque, réservé au logo */
+  --wa:#1f8f53;
+  --shadow:0 1px 2px rgba(16,41,46,.06),0 8px 24px rgba(16,41,46,.08);
+  --f-display:"Marcellus","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1a1d;--surface:#122428;--ink:#e6efee;--muted:#9db1b2;--line:#22393d;
+  --lagon:#3fb6ad;--lagon-ink:#06201f;--teck:#d39a74;--wa:#3cc07a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1a1d;--surface:#122428;--ink:#e6efee;--muted:#9db1b2;--line:#22393d;
+  --lagon:#3fb6ad;--lagon-ink:#06201f;--teck:#d39a74;--wa:#3cc07a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lagon);outline-offset:2px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lagon)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:.01em}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.15}
+p{margin:0}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
+.logo{font-family:var(--f-display);font-size:1.5rem;letter-spacing:.22em;color:var(--teck);text-decoration:none;line-height:1}
+.logo small{display:block;font-family:var(--f-body);font-size:.58rem;letter-spacing:.32em;color:var(--muted);margin-top:4px}
+nav.main{display:flex;gap:22px;margin-left:auto;font-size:.95rem}
+nav.main a{text-decoration:none;color:var(--muted)}
+nav.main a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;font:600 .95rem/1 var(--f-body);text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{filter:brightness(1.07)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn svg{width:18px;height:18px;flex:none}
+@media (max-width:760px){nav.main{display:none}header.top .btn{margin-left:auto;padding:9px 14px}}
+
+/* hero */
+.hero{position:relative;color:#fff;overflow:hidden;background:#0d3b4f}
+.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 72%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,30,40,.55) 0%,rgba(6,30,40,.15) 45%,rgba(6,30,40,.65) 100%)}
+@media (min-width:761px){.hero::after{background:linear-gradient(90deg,rgba(6,30,40,.82) 0%,rgba(6,30,40,.55) 38%,rgba(6,30,40,.08) 70%),linear-gradient(180deg,rgba(6,30,40,.35),transparent 30%)}}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(72px,12vw,150px) clamp(48px,7vw,88px);display:grid;gap:22px}
+.hero .eyebrow{color:#bfe9e4}
+.hero h1{font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.02;max-width:12ch}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:46ch;color:#e8f3f2}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero .btn-ghost{color:#fff}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:18px;font-family:var(--f-mono);font-size:.85rem;color:#d6efec}
+.facts b{font-weight:500;color:#fff}
+
+/* collections */
+section{padding-block:clamp(56px,8vw,96px)}
+.sec-head{display:grid;gap:10px;margin-bottom:32px;max-width:60ch}
+.sec-head p{color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media (max-width:980px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{position:relative;border:0;padding:0;border-radius:6px;overflow:hidden;cursor:pointer;aspect-ratio:4/5;background:var(--line);text-align:left;color:#fff;max-width:100%}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.tile:hover img{transform:scale(1.05)}
+.tile span{position:absolute;inset:auto 0 0 0;padding:44px 12px 12px;background:linear-gradient(180deg,transparent,rgba(5,25,30,.82));display:grid;gap:2px}
+.tile b{font-family:var(--f-display);font-weight:400;font-size:1.08rem;line-height:1.2}
+.tile em{font-style:normal;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:#cfe7e4}
+
+/* catalogue */
+#catalogue{background:var(--surface);border-block:1px solid var(--line)}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 520px;min-width:0}
+.chip{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:7px 13px;font:500 .85rem/1 var(--f-body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--lagon);border-color:var(--lagon);color:var(--lagon-ink)}
+.chip i{font-style:normal;font-family:var(--f-mono);font-size:.72rem;opacity:.75;margin-left:4px}
+.search{position:relative;flex:0 1 240px;min-width:0}
+.search input{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:10px 12px 10px 36px;font:500 .95rem var(--f-mono)}
+.search svg{position:absolute;left:11px;top:50%;translate:0 -50%;width:16px;height:16px;color:var(--muted)}
+.count{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px 18px}
+.card{border:0;background:none;padding:0;text-align:left;cursor:pointer;color:inherit;display:grid;gap:9px;min-width:0}
+.card .ph{aspect-ratio:3/2;border-radius:6px;overflow:hidden;background:var(--line);max-width:100%}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.card:hover img{transform:scale(1.04)}
+.card .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.card .ref{font-family:var(--f-mono);font-weight:500;font-size:.95rem;letter-spacing:.02em}
+.card .cat{font-size:.8rem;color:var(--muted);text-align:right}
+.more{display:flex;justify-content:center;margin-top:34px}
+.more .btn{color:var(--lagon)}
+.empty{padding:40px 0;color:var(--muted)}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:s}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--lagon);padding-top:16px;display:grid;gap:8px;min-width:0}
+.step::before{counter-increment:s;content:"Étape " counter(s);font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lagon)}
+.step h3{font-size:1.35rem}
+.step p{color:var(--muted)}
+.ref-inline{font-family:var(--f-mono);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--ink)}
+
+/* contact */
+#contact{background:var(--ink);color:var(--bg)}
+#contact .eyebrow{color:color-mix(in srgb,var(--lagon) 60%,var(--bg))}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:26px 0 0;font-size:1.05rem}
+.contact-grid dt{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;padding-top:4px}
+.contact-grid dd{margin:0}
+.qrs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.qr{background:#fff;color:#0b1a1c;border-radius:10px;padding:16px;display:grid;gap:12px;justify-items:center;min-width:0}
+.qr svg{width:100%;max-width:190px;height:auto;color:#0b1a1c}
+.qr b{font-weight:600}
+.qr a{font-size:.85rem;color:#0f6b6b}
+footer{padding-block:28px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* lightbox */
+dialog{border:0;padding:0;border-radius:10px;background:var(--surface);color:var(--ink);width:min(980px,calc(100vw - 32px));max-height:calc(100vh - 32px);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(5,20,24,.72)}
+.lb{display:grid;grid-template-columns:1.6fr 1fr}
+@media (max-width:760px){.lb{grid-template-columns:1fr}}
+.lb img{width:100%;height:100%;object-fit:cover;background:var(--line);min-height:240px}
+.lb .info{padding:26px;display:grid;gap:14px;align-content:start;min-width:0}
+.lb .ref{font-family:var(--f-mono);font-size:1.6rem;font-weight:500}
+.lb .row{display:flex;flex-wrap:wrap;gap:10px}
+.lb .note{font-size:.9rem;color:var(--muted)}
+.close{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.3rem;cursor:pointer}
+.nav-lb{display:flex;gap:8px;margin-top:6px}
+.nav-lb button{flex:1}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));translate:-50% 0;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:.9rem;z-index:50}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#accueil">MOUNKO<small>OUTDOOR FURNITURE</small></a>
+    <nav class="main" aria-label="Navigation principale">
+      <a href="#collections">Collections</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#commander">Commander</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="accueil">
+<section class="hero" aria-label="Présentation">
+  <picture>
+    <source media="(min-width:761px)" srcset="img/hero-wide.webp">
+    <img src="img/hero.webp" alt="Salon de jardin MOUNKO au bord d'une piscine face à la mer" fetchpriority="high">
+  </picture>
+  <div class="wrap">
+    <span class="eyebrow">Mobilier d'extérieur · Jarry, Guadeloupe</span>
+    <h1>Vivez dehors, avec style.</h1>
+    <p class="lead">Salons de jardin, tables, daybeds, bains de soleil, fauteuils suspendus et parasols pour vos terrasses, jardins et bords de piscine.</p>
+    <div class="ctas">
+      <a class="btn btn-wa" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Demander un devis</a>
+      <a class="btn btn-ghost" href="#catalogue">Voir le catalogue</a>
+    </div>
+    <div class="facts"><span><b id="f-total">300</b> modèles</span><span><b>10</b> collections</span><span>Devis sur <b>WhatsApp</b> ou <b>WeChat</b></span></div>
+  </div>
+</section>
+
+<section id="collections">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Collections</span>
+      <h2>Tout pour équiper vos espaces extérieurs</h2>
+      <p>Choisissez une collection pour afficher ses modèles dans le catalogue.</p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+</section>
+
+<section id="catalogue">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Catalogue 2026</span>
+      <h2>Nos modèles</h2>
+      <p>Chaque modèle a une référence <span class="ref-inline">MK-xxxx</span>. Notez-la et envoyez-la nous pour recevoir votre devis.</p>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="chips" role="group" aria-label="Filtrer par collection"></div>
+      <label class="search" for="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" inputmode="numeric" placeholder="Réf. ex : 8102" aria-label="Rechercher une référence"></label>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Aucun modèle ne correspond à cette référence. Vérifiez les chiffres ou choisissez « Tout ».</p>
+    <div class="more"><button class="btn btn-ghost" id="more" type="button">Afficher plus de modèles</button></div>
+  </div>
+</section>
+
+<section id="commander">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Commander</span>
+      <h2>Votre devis en trois étapes</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Choisissez vos modèles</h3><p>Parcourez le catalogue et notez la référence de chaque modèle qui vous plaît, par exemple <span class="ref-inline">MK-8002</span>.</p></div>
+      <div class="step"><h3>Envoyez les références</h3><p>Écrivez-nous sur WhatsApp ou WeChat avec les références, les quantités et les coloris souhaités.</p></div>
+      <div class="step"><h3>Recevez votre devis</h3><p>Nous revenons vers vous avec le prix, les options disponibles et les modalités de commande.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2 style="margin-top:10px">Parlons de votre projet</h2>
+      <dl>
+        <dt>Contact</dt><dd>Dimitri Erin</dd>
+        <dt>Adresse</dt><dd>Jarry, Guadeloupe</dd>
+        <dt>Messagerie</dt><dd>WhatsApp et WeChat</dd>
+      </dl>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
+        <a class="btn btn-wa" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Écrire sur WhatsApp</a>
+        <a class="btn btn-ghost" href="https://u.wechat.com/kIHDQxz6X9xz9_CbBw0NeXU?s=2" target="_blank" rel="noopener">Ajouter sur WeChat</a>
+      </div>
+    </div>
+    <div class="qrs">
+      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" role="img" aria-label="QR code whatsapp" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="currentColor" d="M0 0.5h7m2 0h4m1 0h1m2 0h3m3 0h2m1 0h7m-33 1h1m5 0h1m1 0h1m4 0h1m4 0h1m2 0h4m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h2m3 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m3 0h3m9 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h2m7 0h3m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m4 0h2m3 0h4m1 0h1m2 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-24 1h2m1 0h1m1 0h5m1 0h1m1 0h2m-23 1h3m1 0h2m2 0h1m2 0h2m1 0h2m1 0h2m1 0h1m8 0h2m-29 1h1m4 0h2m2 0h3m3 0h4m1 0h1m2 0h2m1 0h4m-30 1h1m2 0h2m1 0h1m1 0h1m1 0h2m1 0h2m3 0h1m1 0h7m2 0h1m-33 1h1m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m3 0h1m1 0h1m3 0h4m1 0h1m2 0h1m-33 1h1m3 0h1m1 0h4m3 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m1 0h1m1 0h1m-30 1h2m3 0h4m1 0h2m2 0h1m1 0h1m1 0h3m3 0h2m1 0h1m1 0h1m-32 1h1m2 0h4m1 0h2m1 0h1m1 0h4m1 0h2m4 0h1m1 0h3m1 0h1m-31 1h1m2 0h2m7 0h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h2m2 0h2m-30 1h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2m1 0h3m2 0h2m1 0h2m-27 1h2m2 0h2m1 0h1m2 0h2m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m2 0h1m-33 1h3m1 0h1m1 0h1m1 0h6m1 0h2m3 0h1m3 0h1m2 0h2m1 0h1m-31 1h2m3 0h1m1 0h3m1 0h3m1 0h2m1 0h1m1 0h1m3 0h3m1 0h1m2 0h2m-31 1h1m3 0h2m2 0h2m1 0h1m2 0h1m2 0h3m1 0h1m4 0h5m-33 1h3m4 0h1m1 0h1m5 0h2m1 0h4m3 0h1m4 0h1m1 0h1m-31 1h1m1 0h1m1 0h4m1 0h1m4 0h3m3 0h2m1 0h2m1 0h5m-32 1h3m3 0h1m1 0h1m4 0h2m2 0h2m6 0h1m1 0h2m2 0h1m-33 1h1m1 0h1m1 0h5m1 0h4m1 0h2m5 0h7m1 0h1m1 0h1m-25 1h5m1 0h4m1 0h1m2 0h3m3 0h2m2 0h1m-33 1h7m3 0h1m1 0h1m3 0h2m1 0h6m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h3m6 0h1m1 0h1m1 0h2m1 0h1m3 0h5m-33 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h1m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m2 0h1m3 0h1m1 0h4m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m2 0h1m2 0h1m3 0h1m1 0h2m1 0h1m-30 1h1m5 0h1m1 0h1m1 0h2m1 0h1m2 0h1m5 0h1m3 0h3m3 0h1m-33 1h7m3 0h3m2 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1"/></svg><b>WhatsApp</b><span style="font-size:.85rem;color:#4a5d60">Scannez pour discuter</span></div>
+      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" role="img" aria-label="QR code wechat" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="currentColor" d="M0 0.5h7m1 0h1m3 0h1m1 0h3m1 0h3m2 0h1m2 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h1m2 0h1m3 0h4m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m3 0h3m2 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m2 0h2m2 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m5 0h2m2 0h1m1 0h1m2 0h2m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m2 0h2m2 0h1m1 0h3m4 0h1m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m1 0h3m1 0h6m3 0h2m-25 1h1m1 0h2m1 0h3m3 0h1m3 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h2m-33 1h5m2 0h2m1 0h1m1 0h3m2 0h3m1 0h1m1 0h1m2 0h2m1 0h4m-33 1h2m1 0h1m2 0h1m1 0h1m2 0h3m4 0h1m2 0h1m1 0h7m2 0h1m-32 1h2m2 0h1m4 0h1m1 0h1m2 0h3m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m-30 1h1m2 0h7m1 0h1m1 0h1m2 0h2m7 0h2m2 0h1m-32 1h3m1 0h1m1 0h3m2 0h1m1 0h1m5 0h1m1 0h4m1 0h1m1 0h3m-32 1h1m1 0h1m2 0h2m1 0h5m1 0h1m4 0h2m1 0h1m3 0h1m2 0h1m-30 1h2m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m5 0h2m1 0h4m1 0h2m-27 1h1m1 0h1m3 0h1m1 0h1m3 0h3m1 0h3m2 0h2m1 0h1m-28 1h1m2 0h1m2 0h1m2 0h2m3 0h1m4 0h2m1 0h2m1 0h1m1 0h2m2 0h1m-33 1h3m1 0h5m2 0h1m1 0h3m2 0h1m1 0h3m4 0h2m1 0h2m-31 1h3m1 0h1m4 0h2m5 0h3m2 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-33 1h5m1 0h1m1 0h1m2 0h2m1 0h3m4 0h2m1 0h1m3 0h5m-33 1h5m3 0h3m3 0h4m2 0h3m6 0h1m2 0h1m-30 1h1m1 0h2m1 0h1m6 0h1m1 0h1m1 0h2m1 0h5m1 0h1m1 0h3m-32 1h4m4 0h1m4 0h2m4 0h1m1 0h1m1 0h1m3 0h2m1 0h1m-32 1h1m1 0h2m1 0h3m3 0h4m1 0h1m2 0h1m4 0h5m1 0h1m-23 1h1m1 0h1m1 0h1m1 0h3m2 0h1m4 0h1m3 0h2m1 0h1m-32 1h7m1 0h4m2 0h1m2 0h8m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h2m1 0h2m1 0h3m1 0h1m1 0h2m3 0h4m-32 1h1m1 0h3m1 0h1m4 0h1m2 0h1m1 0h3m1 0h1m2 0h6m1 0h1m-31 1h1m1 0h3m1 0h1m1 0h1m1 0h3m3 0h1m2 0h1m1 0h2m1 0h2m1 0h1m4 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h4m5 0h2m2 0h2m1 0h1m-30 1h1m5 0h1m4 0h4m2 0h1m2 0h1m2 0h3m1 0h2m3 0h1m-33 1h7m1 0h1m1 0h1m2 0h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1"/></svg><b>WeChat</b><span style="font-size:.85rem;color:#4a5d60">Scannez pour m'ajouter</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><span style="font-family:var(--f-display);letter-spacing:.2em;color:var(--teck)">MOUNKO</span> · Mobilier d'extérieur · Jarry, Guadeloupe</span>
+    <span>Photos non contractuelles. Couleurs données à titre indicatif.</span>
+  </div>
+</footer>
+
+<dialog id="lb" aria-label="Détail du modèle">
+  <div class="lb">
+    <img id="lb-img" alt="">
+    <div class="info">
+      <span class="eyebrow" id="lb-cat"></span>
+      <span class="ref" id="lb-ref"></span>
+      <p class="note">Pour un devis, envoyez cette référence sur WhatsApp ou WeChat avec la quantité souhaitée.</p>
+      <div class="row">
+        <a class="btn btn-wa" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Demander un devis</a>
+        <button class="btn btn-ghost" id="lb-copy" type="button">Copier la référence</button>
+      </div>
+      <div class="nav-lb"><button class="btn btn-ghost" id="lb-prev" type="button">← Précédent</button><button class="btn btn-ghost" id="lb-next" type="button">Suivant →</button></div>
+    </div>
+  </div>
+  <button class="close" id="lb-close" type="button" aria-label="Fermer">×</button>
+</dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const P=[["MK-8001","img/MK-8001.webp","salons"],["MK-8002","img/MK-8002.webp","salons"],["MK-8003","img/MK-8003.webp","salons"],["MK-8005","img/MK-8005.webp","salons"],["MK-8006","img/MK-8006.webp","salons"],["MK-8007","img/MK-8007.webp","salons"],["MK-8008","img/MK-8008.webp","salons"],["MK-8009","img/MK-8009.webp","salons"],["MK-8010","img/MK-8010.webp","salons"],["MK-8011","img/MK-8011.webp","salons"],["MK-8012","img/MK-8012.webp","salons"],["MK-8013","img/MK-8013.webp","salons"],["MK-8015","img/MK-8015.webp","salons"],["MK-8016","img/MK-8016.webp","salons"],["MK-8017","img/MK-8017.webp","salons"],["MK-8018","img/MK-8018.webp","salons"],["MK-8019","img/MK-8019.webp","salons"],["MK-8020","img/MK-8020.webp","salons"],["MK-8021","img/MK-8021.webp","salons"],["MK-8022","img/MK-8022.webp","salons"],["MK-8023","img/MK-8023.webp","salons"],["MK-8025","img/MK-8025.webp","salons"],["MK-8026","img/MK-8026.webp","salons"],["MK-8027","img/MK-8027.webp","salons"],["MK-8028","img/MK-8028.webp","salons"],["MK-8029","img/MK-8029.webp","salons"],["MK-8030","img/MK-8030.webp","salons"],["MK-8031","img/MK-8031.webp","salons"],["MK-8032","img/MK-8032.webp","salons"],["MK-8033","img/MK-8033.webp","salons"],["MK-8035","img/MK-8035.webp","salons"],["MK-8036","img/MK-8036.webp","salons"],["MK-8037","img/MK-8037.webp","salons"],["MK-8038","img/MK-8038.webp","salons"],["MK-8039","img/MK-8039.webp","salons"],["MK-8050","img/MK-8050.webp","salons"],["MK-8051","img/MK-8051.webp","salons"],["MK-8052","img/MK-8052.webp","salons"],["MK-8053","img/MK-8053.webp","salons"],["MK-8055","img/MK-8055.webp","salons"],["MK-8056","img/MK-8056.webp","salons"],["MK-8057","img/MK-8057.webp","salons"],["MK-8058","img/MK-8058.webp","salons"],["MK-8059","img/MK-8059.webp","salons"],["MK-8060","img/MK-8060.webp","salons"],["MK-8061","img/MK-8061.webp","salons"],["MK-8062","img/MK-8062.webp","salons"],["MK-8063","img/MK-8063.webp","salons"],["MK-8065","img/MK-8065.webp","salons"],["MK-8066","img/MK-8066.webp","salons"],["MK-8067","img/MK-8067.webp","salons"],["MK-8068","img/MK-8068.webp","salons"],["MK-8069","img/MK-8069.webp","salons"],["MK-8070","img/MK-8070.webp","salons"],["MK-8071","img/MK-8071.webp","salons"],["MK-8072","img/MK-8072.webp","salons"],["MK-8073","img/MK-8073.webp","salons"],["MK-8075","img/MK-8075.webp","salons"],["MK-8076","img/MK-8076.webp","salons"],["MK-8077","img/MK-8077.webp","salons"],["MK-8078","img/MK-8078.webp","salons"],["MK-8079","img/MK-8079.webp","salons"],["MK-8080","img/MK-8080.webp","salons"],["MK-8081","img/MK-8081.webp","salons"],["MK-8082","img/MK-8082.webp","salons"],["MK-8083","img/MK-8083.webp","salons"],["MK-8085","img/MK-8085.webp","salons"],["MK-8086","img/MK-8086.webp","salons"],["MK-8087","img/MK-8087.webp","salons"],["MK-8088","img/MK-8088.webp","salons"],["MK-8089","img/MK-8089.webp","salons"],["MK-8090","img/MK-8090.webp","salons"],["MK-8091","img/MK-8091.webp","salons"],["MK-8092","img/MK-8092.webp","salons"],["MK-8093","img/MK-8093.webp","salons"],["MK-8095","img/MK-8095.webp","salons"],["MK-8096","img/MK-8096.webp","salons"],["MK-8097","img/MK-8097.webp","salons"],["MK-8098","img/MK-8098.webp","salons"],["MK-8099","img/MK-8099.webp","salons"],["MK-8100","img/MK-8100.webp","salons"],["MK-8101","img/MK-8101.webp","salons"],["MK-8102","img/MK-8102.webp","salons"],["MK-8103","img/MK-8103.webp","salons"],["MK-8105","img/MK-8105.webp","salons"],["MK-8106","img/MK-8106.webp","salons"],["MK-8107","img/MK-8107.webp","salons"],["MK-8108","img/MK-8108.webp","salons"],["MK-8109","img/MK-8109.webp","salons"],["MK-8110","img/MK-8110.webp","salons"],["MK-8111","img/MK-8111.webp","salons"],["MK-8112","img/MK-8112.webp","salons"],["MK-8113","img/MK-8113.webp","salons"],["MK-8115","img/MK-8115.webp","salons"],["MK-8116","img/MK-8116.webp","salons"],["MK-8117","img/MK-8117.webp","salons"],["MK-8118","img/MK-8118.webp","salons"],["MK-8119","img/MK-8119.webp","salons"],["MK-8120","img/MK-8120.webp","salons"],["MK-8121","img/MK-8121.webp","salons"],["MK-8122","img/MK-8122.webp","salons"],["MK-8123","img/MK-8123.webp","salons"],["MK-8125","img/MK-8125.webp","salons"],["MK-8126","img/MK-8126.webp","salons"],["MK-8127","img/MK-8127.webp","salons"],["MK-8128","img/MK-8128.webp","salons"],["MK-8129","img/MK-8129.webp","salons"],["MK-8130","img/MK-8130.webp","salons"],["MK-8131","img/MK-8131.webp","salons"],["MK-8132","img/MK-8132.webp","salons"],["MK-8133","img/MK-8133.webp","salons"],["MK-8135","img/MK-8135.webp","salons"],["MK-8136","img/MK-8136.webp","salons"],["MK-8137","img/MK-8137.webp","salons"],["MK-8138","img/MK-8138.webp","salons"],["MK-8139","img/MK-8139.webp","salons"],["MK-8150","img/MK-8150.webp","salons"],["MK-8151","img/MK-8151.webp","salons"],["MK-8152","img/MK-8152.webp","repas"],["MK-8153","img/MK-8153.webp","repas"],["MK-8155","img/MK-8155.webp","repas"],["MK-8156","img/MK-8156.webp","repas"],["MK-8157","img/MK-8157.webp","repas"],["MK-8158","img/MK-8158.webp","repas"],["MK-8159","img/MK-8159.webp","repas"],["MK-8160","img/MK-8160.webp","repas"],["MK-8161","img/MK-8161.webp","repas"],["MK-8162","img/MK-8162.webp","repas"],["MK-8163","img/MK-8163.webp","repas"],["MK-8165","img/MK-8165.webp","repas"],["MK-8166","img/MK-8166.webp","repas"],["MK-8167","img/MK-8167.webp","repas"],["MK-8168","img/MK-8168.webp","repas"],["MK-8169","img/MK-8169.webp","repas"],["MK-8170","img/MK-8170.webp","repas"],["MK-8171","img/MK-8171.webp","repas"],["MK-8172","img/MK-8172.webp","repas"],["MK-8173","img/MK-8173.webp","repas"],["MK-8175","img/MK-8175.webp","repas"],["MK-8176","img/MK-8176.webp","repas"],["MK-8177","img/MK-8177.webp","repas"],["MK-8178","img/MK-8178.webp","repas"],["MK-8179","img/MK-8179.webp","repas"],["MK-8180","img/MK-8180.webp","repas"],["MK-8181","img/MK-8181.webp","repas"],["MK-8182","img/MK-8182.webp","repas"],["MK-8183","img/MK-8183.webp","repas"],["MK-8185","img/MK-8185.webp","repas"],["MK-8186","img/MK-8186.webp","repas"],["MK-8187","img/MK-8187.webp","repas"],["MK-8188","img/MK-8188.webp","fauteuils"],["MK-8189","img/MK-8189.webp","fauteuils"],["MK-8190","img/MK-8190.webp","fauteuils"],["MK-8191","img/MK-8191.webp","fauteuils"],["MK-8192","img/MK-8192.webp","fauteuils"],["MK-8193","img/MK-8193.webp","fauteuils"],["MK-8195","img/MK-8195.webp","fauteuils"],["MK-8196","img/MK-8196.webp","fauteuils"],["MK-8197","img/MK-8197.webp","fauteuils"],["MK-8198","img/MK-8198.webp","fauteuils"],["MK-8199","img/MK-8199.webp","fauteuils"],["MK-8200","img/MK-8200.webp","fauteuils"],["MK-8201","img/MK-8201.webp","fauteuils"],["MK-8202","img/MK-8202.webp","fauteuils"],["MK-8203","img/MK-8203.webp","fauteuils"],["MK-8205","img/MK-8205.webp","fauteuils"],["MK-8206","img/MK-8206.webp","fauteuils"],["MK-8207","img/MK-8207.webp","fauteuils"],["MK-8208","img/MK-8208.webp","fauteuils"],["MK-8209","img/MK-8209.webp","fauteuils"],["MK-8210","img/MK-8210.webp","fauteuils"],["MK-8211","img/MK-8211.webp","fauteuils"],["MK-8212","img/MK-8212.webp","fauteuils"],["MK-8213","img/MK-8213.webp","fauteuils"],["MK-8215","img/MK-8215.webp","fauteuils"],["MK-8216","img/MK-8216.webp","fauteuils"],["MK-8217","img/MK-8217.webp","fauteuils"],["MK-8218","img/MK-8218.webp","fauteuils"],["MK-8219","img/MK-8219.webp","fauteuils"],["MK-8220","img/MK-8220.webp","fauteuils"],["MK-8221","img/MK-8221.webp","fauteuils"],["MK-8222","img/MK-8222.webp","fauteuils"],["MK-8223","img/MK-8223.webp","bar"],["MK-8225","img/MK-8225.webp","bar"],["MK-8226","img/MK-8226.webp","bar"],["MK-8227","img/MK-8227.webp","bar"],["MK-8228","img/MK-8228.webp","bar"],["MK-8229","img/MK-8229.webp","bar"],["MK-8230","img/MK-8230.webp","bar"],["MK-8231","img/MK-8231.webp","bar"],["MK-8232","img/MK-8232.webp","bar"],["MK-8233","img/MK-8233.webp","bar"],["MK-8235","img/MK-8235.webp","bar"],["MK-8236","img/MK-8236.webp","bar"],["MK-8237","img/MK-8237.webp","daybeds"],["MK-8238","img/MK-8238.webp","daybeds"],["MK-8239","img/MK-8239.webp","daybeds"],["MK-8250","img/MK-8250.webp","daybeds"],["MK-8251","img/MK-8251.webp","daybeds"],["MK-8252","img/MK-8252.webp","daybeds"],["MK-8253","img/MK-8253.webp","daybeds"],["MK-8255","img/MK-8255.webp","daybeds"],["MK-8256","img/MK-8256.webp","daybeds"],["MK-8257","img/MK-8257.webp","daybeds"],["MK-8258","img/MK-8258.webp","daybeds"],["MK-8259","img/MK-8259.webp","daybeds"],["MK-8260","img/MK-8260.webp","daybeds"],["MK-8261","img/MK-8261.webp","daybeds"],["MK-8262","img/MK-8262.webp","daybeds"],["MK-8263","img/MK-8263.webp","daybeds"],["MK-8265","img/MK-8265.webp","daybeds"],["MK-8266","img/MK-8266.webp","daybeds"],["MK-8267","img/MK-8267.webp","daybeds"],["MK-8268","img/MK-8268.webp","daybeds"],["MK-8269","img/MK-8269.webp","daybeds"],["MK-8270","img/MK-8270.webp","daybeds"],["MK-8271","img/MK-8271.webp","daybeds"],["MK-8272","img/MK-8272.webp","daybeds"],["MK-8273","img/MK-8273.webp","daybeds"],["MK-8275","img/MK-8275.webp","daybeds"],["MK-8276","img/MK-8276.webp","daybeds"],["MK-8277","img/MK-8277.webp","daybeds"],["MK-8278","img/MK-8278.webp","transats"],["MK-8279","img/MK-8279.webp","transats"],["MK-8280","img/MK-8280.webp","transats"],["MK-8281","img/MK-8281.webp","transats"],["MK-8282","img/MK-8282.webp","transats"],["MK-8283","img/MK-8283.webp","transats"],["MK-8285","img/MK-8285.webp","transats"],["MK-8286","img/MK-8286.webp","transats"],["MK-8287","img/MK-8287.webp","transats"],["MK-8288","img/MK-8288.webp","transats"],["MK-8289","img/MK-8289.webp","transats"],["MK-8290","img/MK-8290.webp","transats"],["MK-8291","img/MK-8291.webp","transats"],["MK-8292","img/MK-8292.webp","transats"],["MK-8293","img/MK-8293.webp","transats"],["MK-8295","img/MK-8295.webp","transats"],["MK-8296","img/MK-8296.webp","suspendus"],["MK-8297","img/MK-8297.webp","suspendus"],["MK-8298","img/MK-8298.webp","suspendus"],["MK-8299","img/MK-8299.webp","suspendus"],["MK-8300","img/MK-8300.webp","suspendus"],["MK-8301","img/MK-8301.webp","suspendus"],["MK-8302","img/MK-8302.webp","suspendus"],["MK-8303","img/MK-8303.webp","suspendus"],["MK-8305","img/MK-8305.webp","suspendus"],["MK-8306","img/MK-8306.webp","suspendus"],["MK-8307","img/MK-8307.webp","suspendus"],["MK-8308","img/MK-8308.webp","suspendus"],["MK-8309","img/MK-8309.webp","suspendus"],["MK-8310","img/MK-8310.webp","suspendus"],["MK-8311","img/MK-8311.webp","suspendus"],["MK-8312","img/MK-8312.webp","suspendus"],["MK-8313","img/MK-8313.webp","pergolas"],["MK-8315","img/MK-8315.webp","pergolas"],["MK-8316","img/MK-8316.webp","pergolas"],["MK-8317","img/MK-8317.webp","pergolas"],["MK-8318","img/MK-8318.webp","pergolas"],["MK-8319","img/MK-8319.webp","suspendus"],["MK-8320","img/MK-8320.webp","suspendus"],["MK-8321","img/MK-8321.webp","suspendus"],["MK-8322","img/MK-8322.webp","suspendus"],["MK-8323","img/MK-8323.webp","suspendus"],["MK-8325","img/MK-8325.webp","fauteuils"],["MK-8326","img/MK-8326.webp","fauteuils"],["MK-8327","img/MK-8327.webp","fauteuils"],["MK-8328","img/MK-8328.webp","fauteuils"],["MK-8329","img/MK-8329.webp","fauteuils"],["MK-8330","img/MK-8330.webp","pergolas"],["MK-8331","img/MK-8331.webp","pergolas"],["MK-8332","img/MK-8332.webp","exterieur"],["MK-8333","img/MK-8333.webp","exterieur"],["MK-8335","img/MK-8335.webp","exterieur"],["MK-8336","img/MK-8336.webp","exterieur"],["MK-8337","img/MK-8337.webp","exterieur"],["MK-8338","img/MK-8338.webp","exterieur"],["MK-8339","img/MK-8339.webp","exterieur"],["MK-8350","img/MK-8350.webp","exterieur"],["MK-8351","img/MK-8351.webp","exterieur"],["MK-8352","img/MK-8352.webp","exterieur"],["MK-8353","img/MK-8353.webp","exterieur"],["MK-8355","img/MK-8355.webp","exterieur"],["MK-8356","img/MK-8356.webp","exterieur"],["MK-8357","img/MK-8357.webp","exterieur"],["MK-8358","img/MK-8358.webp","exterieur"],["MK-8359","img/MK-8359.webp","exterieur"],["MK-8360","img/MK-8360.webp","exterieur"],["MK-8361","img/MK-8361.webp","exterieur"],["MK-8362","img/MK-8362.webp","exterieur"],["MK-8363","img/MK-8363.webp","parasols"],["MK-8365","img/MK-8365.webp","parasols"],["MK-8366","img/MK-8366-b.webp","parasols"],["MK-8366","img/MK-8366.webp","parasols"],["MK-8368","img/MK-8368-b.webp","parasols"],["MK-8368","img/MK-8368.webp","parasols"],["MK-8369","img/MK-8369.webp","parasols"],["MK-8370","img/MK-8370.webp","parasols"],["MK-8371","img/MK-8371.webp","parasols"],["MK-8372","img/MK-8372.webp","parasols"]].map(([ref,img,cat])=>({ref,img,cat}));
+const CATS=[
+ ['salons','Salons de jardin','MK-8002'],['repas','Ensembles repas','MK-8155'],['fauteuils','Fauteuils & chaises','MK-8200'],
+ ['bar','Tables hautes & bar','MK-8233'],['daybeds','Daybeds & lits de jardin','MK-8256'],['transats','Bains de soleil','MK-8290'],
+ ['suspendus','Suspendus & balancelles','MK-8303'],['pergolas','Pergolas & tonnelles','MK-8313'],
+ ['exterieur','Bancs, tables & jardinières','MK-8338'],['parasols','Parasols','MK-8363']];
+const NAME=Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
+const STEP=24;
+let cat='all',q='',shown=STEP,list=[],cur=0;
+const $=id=>document.getElementById(id);
+const count=k=>P.filter(p=>p.cat===k).length;
+$('f-total').textContent=P.length;
+
+// tiles
+$('tiles').innerHTML=CATS.map(([k,n,ref])=>{const p=P.find(x=>x.ref===ref&&x.cat===k)||P.find(x=>x.cat===k);
+ return `<button class="tile" type="button" data-cat="${k}"><img src="${p.img}" alt="" loading="lazy"><span><b>${n}</b><em>${count(k)} modèles</em></span></button>`}).join('');
+$('tiles').addEventListener('click',e=>{const t=e.target.closest('.tile');if(!t)return;setCat(t.dataset.cat);$('catalogue').scrollIntoView()});
+
+// chips
+$('chips').innerHTML=`<button class="chip" type="button" data-cat="all" aria-pressed="true">Tout<i>${P.length}</i></button>`+
+ CATS.map(([k,n])=>`<button class="chip" type="button" data-cat="${k}" aria-pressed="false">${n}<i>${count(k)}</i></button>`).join('');
+$('chips').addEventListener('click',e=>{const c=e.target.closest('.chip');if(c)setCat(c.dataset.cat)});
+function setCat(k){cat=k;shown=STEP;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.cat===k));render()}
+$('q').addEventListener('input',e=>{q=e.target.value.replace(/\D/g,'');shown=STEP;render()});
+$('more').addEventListener('click',()=>{shown+=STEP;render(true)});
+
+function render(append){
+  list=P.filter(p=>(cat==='all'||p.cat===cat)&&(!q||p.ref.includes(q)));
+  const vis=list.slice(0,shown);
+  $('grid').innerHTML=vis.map((p,i)=>`<button class="card" type="button" data-i="${i}"><div class="ph"><img src="${p.img}" alt="Modèle ${p.ref}, ${NAME[p.cat]}" loading="lazy" width="900" height="566"></div><div class="meta"><span class="ref">${p.ref}</span><span class="cat">${NAME[p.cat]}</span></div></button>`).join('');
+  $('count').textContent=`${list.length} modèle${list.length>1?'s':''}${cat!=='all'?' · '+NAME[cat]:''}${q?' · réf. contenant « '+q+' »':''}`;
+  $('empty').hidden=list.length>0;
+  $('more').parentElement.hidden=shown>=list.length;
+}
+$('grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openLb(+c.dataset.i)});
+
+// lightbox
+const lb=$('lb');
+function openLb(i){cur=(i+list.length)%list.length;const p=list[cur];
+  $('lb-img').src=p.img;$('lb-img').alt=`Modèle ${p.ref}`;$('lb-ref').textContent=p.ref;$('lb-cat').textContent=NAME[p.cat];
+  if(!lb.open)lb.showModal()}
+$('lb-close').onclick=()=>lb.close();
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+$('lb-prev').onclick=()=>openLb(cur-1);$('lb-next').onclick=()=>openLb(cur+1);
+document.addEventListener('keydown',e=>{if(!lb.open)return;if(e.key==='ArrowLeft')openLb(cur-1);if(e.key==='ArrowRight')openLb(cur+1)});
+function toast(m){const t=$('toast');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2200)}
+$('lb-copy').onclick=()=>{const r=list[cur].ref;
+  try{navigator.clipboard.writeText(r).then(()=>toast(`${r} copiée`),()=>toast(`Référence : ${r}`))}catch(_){toast(`Référence : ${r}`)}};
+render();
+</script>
+
+</body>
+</html>

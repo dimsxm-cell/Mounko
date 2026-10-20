@@ -401,13 +401,13 @@ const CATS=[
  ['bar','Tables hautes & bar','MK-8233'],['daybeds','Daybeds & lits de jardin','MK-8256'],['transats','Bains de soleil','MK-8290'],
  ['suspendus','Suspendus & balancelles','MK-8303'],['pergolas','Pergolas & tonnelles','MK-8313'],
  ['exterieur','Bancs, tables & jardinières','MK-8338'],['parasols','Parasols','MK-8363']];
-const PICKS=['MK-8002','MK-8156','MK-8260','MK-8199','MK-8323','MK-8023','MK-8238','MK-8298','MK-8051','MK-8362','MK-8113','MK-8006'];
+const PICKS=['MK-8002','MK-8023','MK-8051','MK-8113','MK-8156','MK-8199','MK-8238','MK-8260','MK-8298','MK-8323','MK-8362','MK-8006'];
 const NAME=Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
 const STEP=24;
 let cat='all',q='',shown=STEP,list=[],cur=0,lbList=[];
 const $=id=>document.getElementById(id);
 const count=k=>P.filter(p=>p.cat===k).length;
-const card=(p,i,attr,tag)=>`<button class="card" type="button" ${attr}="${i}"><div class="ph"><img src="${p.img}" alt="Modèle ${p.ref}, ${NAME[p.cat]}" loading="lazy" width="900" height="566"><span class="tag">${NAME[p.cat]}</span></div><div><div class="nm">${p.ref}</div></div><span class="go">Voir le modèle</span></button>`;
+const card=(p,i,attr,tag)=>`<button class="card" type="button" ${attr}="${i}"><div class="ph"><img src="${p.img}" alt="Modèle ${p.ref}, ${NAME[p.cat]}" loading="lazy" width="900" height="566">${tag?`<span class="tag">${tag}</span>`:''}</div><div><div class="nm">${p.ref}</div><div class="ct">${NAME[p.cat]}</div></div><span class="go">Voir le modèle</span></button>`;
 
 // header
 const hdr=$('hdr');const onScroll=()=>hdr.classList.toggle('solid',scrollY>40||$('drawer').classList.contains('open'));
@@ -417,7 +417,7 @@ $('drawer').addEventListener('click',e=>{if(e.target.closest('a')){$('drawer').c
 
 // slider
 const picks=PICKS.map(r=>P.find(p=>p.ref===r)).filter(Boolean);
-$('track').innerHTML=picks.map((p,i)=>`<div class="slide">${card(p,i,'data-s')}</div>`).join('');
+$('track').innerHTML=picks.map((p,i)=>`<div class="slide">${card(p,i,'data-s','Sélection')}</div>`).join('');
 $('track').addEventListener('click',e=>{const c=e.target.closest('.card');if(c){lbList=picks;openLb(+c.dataset.s)}});
 const stepW=()=>$('track').querySelector('.slide').getBoundingClientRect().width+20;
 $('prev').onclick=()=>$('track').scrollBy({left:-stepW(),behavior:'smooth'});

@@ -68,6 +68,12 @@ nav.main a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
 .hdr-cta{justify-self:end;display:flex;gap:10px;align-items:center}
 .hdr-cta .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid currentColor;border-radius:8px;padding:9px 14px;font:600 .88rem/1 var(--f-body);text-decoration:none}
 .hdr-cta .pill svg{width:16px;height:16px}
+.lang{display:flex;align-items:center;border:1px solid currentColor;border-radius:8px;overflow:hidden}
+.lang button{background:none;border:0;color:inherit;font:600 .74rem/1 var(--f-body);letter-spacing:.06em;padding:10px 8px;cursor:pointer;opacity:.55}
+.lang button+button{border-left:1px solid currentColor}
+.lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.lang button:hover{opacity:1}
+@media (max-width:420px){.lang button{padding:9px 6px;font-size:.7rem}.hdr-cta{gap:6px}.logo{font-size:1.3rem;letter-spacing:.14em}}
 .burger{display:none;background:none;border:0;color:inherit;padding:6px;cursor:pointer}
 .burger svg{width:24px;height:24px}
 .drawer{display:none}
@@ -230,31 +236,31 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
 
 <header class="top" id="hdr">
   <div class="wrap">
-    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h12"/></svg></button>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" data-i18n-attr="aria-label:aria.menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h12"/></svg></button>
     <nav class="main" aria-label="Navigation principale">
-      <a href="#collections">Collections</a>
-      <a href="#catalogue">Catalogue</a>
-      <a href="#commander">Commander</a>
-      <a href="#contact">Contact</a>
+      <a href="#collections" data-i18n="nav.collections">Collections</a>
+      <a href="#catalogue" data-i18n="nav.catalogue">Catalogue</a>
+      <a href="#commander" data-i18n="nav.order">Commander</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <a class="logo" href="#top">MOUNKO</a>
-    <div class="hdr-cta"><a class="pill" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span>Devis WhatsApp</span></a></div>
+    <div class="hdr-cta"><div class="lang" role="group" aria-label="Langue" data-i18n-attr="aria-label:aria.lang"><button type="button" data-lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div><a class="pill" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span data-i18n="hdr.quote">Devis WhatsApp</span></a></div>
   </div>
   <nav class="drawer" id="drawer" aria-label="Menu mobile">
-    <a href="#collections">Collections</a><a href="#catalogue">Catalogue</a><a href="#commander">Commander</a><a href="#contact">Contact</a>
+    <a href="#collections" data-i18n="nav.collections">Collections</a><a href="#catalogue" data-i18n="nav.catalogue">Catalogue</a><a href="#commander" data-i18n="nav.order">Commander</a><a href="#contact" data-i18n="nav.contact">Contact</a>
   </nav>
 </header>
 
 <main id="top">
 <section class="hero" aria-label="Accueil">
-  <img src="img/hero-wide.webp" alt="Salon de jardin au bord d'une piscine face à la mer" fetchpriority="high">
+  <img src="img/hero-wide.webp" alt="Salon de jardin au bord d'une piscine face à la mer" data-i18n-attr="alt:hero.alt" fetchpriority="high">
   <div class="in wrap">
-    <span class="kicker" style="color:#e8e5e0">Mobilier d'extérieur · Jarry, Guadeloupe</span>
-    <h1>Faites de votre extérieur un lieu d'exception</h1>
+    <span class="kicker" style="color:#e8e5e0" data-i18n="hero.k">Mobilier d'extérieur · Jarry, Guadeloupe</span>
+    <h1 data-i18n="hero.h1">Faites de votre extérieur un lieu d'exception</h1>
     <div class="links">
-      <a class="btn" href="#collections">Collections</a>
-      <a class="btn line" href="#catalogue">Catalogue</a>
-      <a class="btn line" href="#contact">Demander un devis</a>
+      <a class="btn" href="#collections" data-i18n="nav.collections">Collections</a>
+      <a class="btn line" href="#catalogue" data-i18n="nav.catalogue">Catalogue</a>
+      <a class="btn line" href="#contact" data-i18n="quote">Demander un devis</a>
     </div>
   </div>
 </section>
@@ -262,12 +268,12 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
 <section id="selection">
   <div class="wrap">
     <div class="head-c">
-      <span class="kicker">Sélection</span>
-      <h2>Notre sélection du moment</h2>
+      <span class="kicker" data-i18n="sel.k">Sélection</span>
+      <h2 data-i18n="sel.h">Notre sélection du moment</h2>
     </div>
     <div class="slider">
       <div class="track" id="track"></div>
-      <div class="arrows"><button type="button" id="prev" aria-label="Modèles précédents">←</button><button type="button" id="next" aria-label="Modèles suivants">→</button></div>
+      <div class="arrows"><button type="button" id="prev" aria-label="Modèles précédents" data-i18n-attr="aria-label:sel.prev">←</button><button type="button" id="next" aria-label="Modèles suivants" data-i18n-attr="aria-label:sel.next">→</button></div>
     </div>
   </div>
 </section>
@@ -275,15 +281,15 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
 <section class="statement">
   <div class="wrap">
     <div class="lead">
-      <span class="kicker">La marque</span>
-      <h2>MOUNKO, l'art de vivre dehors en Guadeloupe</h2>
-      <p>Basée à Jarry, MOUNKO réunit des collections de mobilier d'extérieur pensées pour les terrasses, les jardins et les bords de piscine. Salons, repas, détente, ombrage : chaque modèle porte une référence MK pour vous permettre de demander un devis en quelques secondes.</p>
+      <span class="kicker" data-i18n="brand.k">La marque</span>
+      <h2 data-i18n="brand.h">MOUNKO, l'art de vivre dehors en Guadeloupe</h2>
+      <p data-i18n="brand.p">Basée à Jarry, MOUNKO réunit des collections de mobilier d'extérieur pensées pour les terrasses, les jardins et les bords de piscine. Salons, repas, détente, ombrage : chaque modèle porte une référence MK pour vous permettre de demander un devis en quelques secondes.</p>
     </div>
     <div class="pillars">
-      <div class="pillar"><b>300 modèles</b><p>Un large choix de salons, tables, daybeds, transats, fauteuils suspendus et parasols.</p></div>
-      <div class="pillar"><b>10 collections</b><p>Des univers clairs pour trouver rapidement le mobilier adapté à votre espace.</p></div>
-      <div class="pillar"><b>Accompagnement</b><p>Nous vous aidons à choisir votre mobilier, du conseil à la commande.</p></div>
-      <div class="pillar"><b>À Jarry</b><p>Un interlocuteur local, joignable directement sur WhatsApp et WeChat.</p></div>
+      <div class="pillar"><b data-i18n="n300">300 modèles</b><p data-i18n="p1.p">Un large choix de salons, tables, daybeds, transats, fauteuils suspendus et parasols.</p></div>
+      <div class="pillar"><b data-i18n="p2.h">10 collections</b><p data-i18n="p2.p">Des univers clairs pour trouver rapidement le mobilier adapté à votre espace.</p></div>
+      <div class="pillar"><b data-i18n="p3.h">Accompagnement</b><p data-i18n="p3.p">Nous vous aidons à choisir votre mobilier, du conseil à la commande.</p></div>
+      <div class="pillar"><b data-i18n="p4.h">À Jarry</b><p data-i18n="p4.p">Un interlocuteur local, joignable directement sur WhatsApp et WeChat.</p></div>
     </div>
   </div>
 </section>
@@ -291,9 +297,9 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
 <section id="collections">
   <div class="wrap">
     <div class="head-c">
-      <span class="kicker">Collections</span>
-      <h2>Trouvez le mobilier de votre extérieur</h2>
-      <p>Choisissez une collection pour afficher ses modèles dans le catalogue.</p>
+      <span class="kicker" data-i18n="nav.collections">Collections</span>
+      <h2 data-i18n="col.h">Trouvez le mobilier de votre extérieur</h2>
+      <p data-i18n="col.p">Choisissez une collection pour afficher ses modèles dans le catalogue.</p>
     </div>
     <div class="cols" id="cols"></div>
   </div>
@@ -302,40 +308,40 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
 <section id="catalogue">
   <div class="wrap">
     <div class="head-c">
-      <span class="kicker">Catalogue 2026</span>
-      <h2>Tous nos modèles</h2>
-      <p>Notez la référence <span class="ref">MK-xxxx</span> des modèles qui vous plaisent et envoyez-la nous pour recevoir votre devis.</p>
+      <span class="kicker" data-i18n="cat.k">Catalogue 2026</span>
+      <h2 data-i18n="cat.h">Tous nos modèles</h2>
+      <p data-i18n-html="cat.p">Notez la référence <span class="ref">MK-xxxx</span> des modèles qui vous plaisent et envoyez-la nous pour recevoir votre devis.</p>
     </div>
     <div class="bar">
-      <div class="chips" id="chips" role="group" aria-label="Filtrer par collection"></div>
-      <label class="search" for="q"><input id="q" type="search" inputmode="numeric" placeholder="Rechercher une référence" aria-label="Rechercher une référence"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></label>
+      <div class="chips" id="chips" role="group" aria-label="Filtrer par collection" data-i18n-attr="aria-label:cat.filter"></div>
+      <label class="search" for="q"><input id="q" type="search" inputmode="numeric" placeholder="Rechercher une référence" aria-label="Rechercher une référence" data-i18n-attr="placeholder:cat.search;aria-label:cat.search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></label>
     </div>
     <p class="count" id="count" aria-live="polite"></p>
     <div class="grid" id="grid"></div>
-    <p class="empty" id="empty" hidden>Aucun modèle ne correspond à cette référence. Vérifiez les chiffres ou choisissez « Tout ».</p>
-    <div class="more"><button class="btn line" id="more" type="button">Afficher plus de modèles</button></div>
+    <p class="empty" id="empty" hidden data-i18n="cat.empty">Aucun modèle ne correspond à cette référence. Vérifiez les chiffres ou choisissez « Tout ».</p>
+    <div class="more"><button class="btn line" id="more" type="button" data-i18n="cat.more">Afficher plus de modèles</button></div>
   </div>
 </section>
 
-<div class="strip" aria-label="Nos services">
+<div class="strip" aria-label="Nos services" data-i18n-attr="aria-label:srv.aria">
   <div class="wrap">
-    <div class="srv"><svg viewBox="0 0 32 32"><path d="M6 25l2.2-5.6A10 10 0 1 1 12 24.5z"/><path d="M12.5 12.5c.5 3 3.5 6 6.5 6.6l1.6-1.8 2.6 1.3-.6 2.4c-6 .6-12-5.4-11.4-11.4l2.4-.6 1.3 2.6z"/></svg><div><b>Devis sur WhatsApp</b><span>Envoyez vos références MK</span></div></div>
-    <div class="srv"><svg viewBox="0 0 32 32"><circle cx="16" cy="12" r="5"/><path d="M6 27c1.5-5 5.5-7.5 10-7.5s8.5 2.5 10 7.5"/></svg><div><b>Conseil personnalisé</b><span>Un interlocuteur dédié</span></div></div>
-    <div class="srv"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="18" rx="1.5"/><path d="M5 12h22M10 17h6"/></svg><div><b>300 modèles</b><span>Catalogue 2026 complet</span></div></div>
-    <div class="srv"><svg viewBox="0 0 32 32"><path d="M16 28s-8-7.6-8-14a8 8 0 1 1 16 0c0 6.4-8 14-8 14z"/><circle cx="16" cy="14" r="3"/></svg><div><b>Jarry, Guadeloupe</b><span>Votre contact local</span></div></div>
+    <div class="srv"><svg viewBox="0 0 32 32"><path d="M6 25l2.2-5.6A10 10 0 1 1 12 24.5z"/><path d="M12.5 12.5c.5 3 3.5 6 6.5 6.6l1.6-1.8 2.6 1.3-.6 2.4c-6 .6-12-5.4-11.4-11.4l2.4-.6 1.3 2.6z"/></svg><div><b data-i18n="srv1.b">Devis sur WhatsApp</b><span data-i18n="srv1.s">Envoyez vos références MK</span></div></div>
+    <div class="srv"><svg viewBox="0 0 32 32"><circle cx="16" cy="12" r="5"/><path d="M6 27c1.5-5 5.5-7.5 10-7.5s8.5 2.5 10 7.5"/></svg><div><b data-i18n="srv2.b">Conseil personnalisé</b><span data-i18n="srv2.s">Un interlocuteur dédié</span></div></div>
+    <div class="srv"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="18" rx="1.5"/><path d="M5 12h22M10 17h6"/></svg><div><b data-i18n="n300">300 modèles</b><span data-i18n="srv3.s">Catalogue 2026 complet</span></div></div>
+    <div class="srv"><svg viewBox="0 0 32 32"><path d="M16 28s-8-7.6-8-14a8 8 0 1 1 16 0c0 6.4-8 14-8 14z"/><circle cx="16" cy="14" r="3"/></svg><div><b data-i18n="place">Jarry, Guadeloupe</b><span data-i18n="srv4.s">Votre contact local</span></div></div>
   </div>
 </div>
 
 <section id="commander">
   <div class="wrap">
     <div class="head-c">
-      <span class="kicker">Commander</span>
-      <h2>Votre devis en trois étapes</h2>
+      <span class="kicker" data-i18n="nav.order">Commander</span>
+      <h2 data-i18n="ord.h">Votre devis en trois étapes</h2>
     </div>
     <div class="steps">
-      <div class="step"><h3>Choisissez vos modèles</h3><p>Parcourez le catalogue et notez la référence de chaque modèle, par exemple <span class="ref">MK-8002</span>.</p></div>
-      <div class="step"><h3>Envoyez les références</h3><p>Écrivez-nous sur WhatsApp ou WeChat avec les références, les quantités et les coloris souhaités.</p></div>
-      <div class="step"><h3>Recevez votre devis</h3><p>Nous revenons vers vous avec le prix, les options disponibles et les modalités de commande.</p></div>
+      <div class="step"><h3 data-i18n="st1.h">Choisissez vos modèles</h3><p data-i18n-html="st1.p">Parcourez le catalogue et notez la référence de chaque modèle, par exemple <span class="ref">MK-8002</span>.</p></div>
+      <div class="step"><h3 data-i18n="st2.h">Envoyez les références</h3><p data-i18n="st2.p">Écrivez-nous sur WhatsApp ou WeChat avec les références, les quantités et les coloris souhaités.</p></div>
+      <div class="step"><h3 data-i18n="st3.h">Recevez votre devis</h3><p data-i18n="st3.p">Nous revenons vers vous avec le prix, les options disponibles et les modalités de commande.</p></div>
     </div>
   </div>
 </section>
@@ -344,21 +350,21 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
   <img src="img/MK-8001.webp" alt="" loading="lazy">
   <div class="wrap">
     <div>
-      <span class="kicker">Contact</span>
-      <h2>Parlons de votre projet</h2>
+      <span class="kicker" data-i18n="nav.contact">Contact</span>
+      <h2 data-i18n="ct.h">Parlons de votre projet</h2>
       <dl>
-        <dt>Contact</dt><dd>Dimitri Erin</dd>
-        <dt>Adresse</dt><dd>Jarry, Guadeloupe</dd>
-        <dt>Messagerie</dt><dd>WhatsApp et WeChat</dd>
+        <dt data-i18n="nav.contact">Contact</dt><dd>Dimitri Erin</dd>
+        <dt data-i18n="ct.addr">Adresse</dt><dd data-i18n="place">Jarry, Guadeloupe</dd>
+        <dt data-i18n="ct.msg">Messagerie</dt><dd data-i18n="ct.msgv">WhatsApp et WeChat</dd>
       </dl>
       <div class="ctas">
-        <a class="btn" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Écrire sur WhatsApp</a>
-        <a class="btn line" href="https://u.wechat.com/kIHDQxz6X9xz9_CbBw0NeXU?s=2" target="_blank" rel="noopener">Ajouter sur WeChat</a>
+        <a class="btn" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span data-i18n="ct.wa">Écrire sur WhatsApp</span></a>
+        <a class="btn line" href="https://u.wechat.com/kIHDQxz6X9xz9_CbBw0NeXU?s=2" target="_blank" rel="noopener" data-i18n="ct.wc">Ajouter sur WeChat</a>
       </div>
     </div>
     <div class="qrs">
-      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" role="img" aria-label="QR code whatsapp" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="currentColor" d="M0 0.5h7m2 0h4m1 0h1m2 0h3m3 0h2m1 0h7m-33 1h1m5 0h1m1 0h1m4 0h1m4 0h1m2 0h4m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h2m3 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m3 0h3m9 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h2m7 0h3m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m4 0h2m3 0h4m1 0h1m2 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-24 1h2m1 0h1m1 0h5m1 0h1m1 0h2m-23 1h3m1 0h2m2 0h1m2 0h2m1 0h2m1 0h2m1 0h1m8 0h2m-29 1h1m4 0h2m2 0h3m3 0h4m1 0h1m2 0h2m1 0h4m-30 1h1m2 0h2m1 0h1m1 0h1m1 0h2m1 0h2m3 0h1m1 0h7m2 0h1m-33 1h1m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m3 0h1m1 0h1m3 0h4m1 0h1m2 0h1m-33 1h1m3 0h1m1 0h4m3 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m1 0h1m1 0h1m-30 1h2m3 0h4m1 0h2m2 0h1m1 0h1m1 0h3m3 0h2m1 0h1m1 0h1m-32 1h1m2 0h4m1 0h2m1 0h1m1 0h4m1 0h2m4 0h1m1 0h3m1 0h1m-31 1h1m2 0h2m7 0h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h2m2 0h2m-30 1h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2m1 0h3m2 0h2m1 0h2m-27 1h2m2 0h2m1 0h1m2 0h2m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m2 0h1m-33 1h3m1 0h1m1 0h1m1 0h6m1 0h2m3 0h1m3 0h1m2 0h2m1 0h1m-31 1h2m3 0h1m1 0h3m1 0h3m1 0h2m1 0h1m1 0h1m3 0h3m1 0h1m2 0h2m-31 1h1m3 0h2m2 0h2m1 0h1m2 0h1m2 0h3m1 0h1m4 0h5m-33 1h3m4 0h1m1 0h1m5 0h2m1 0h4m3 0h1m4 0h1m1 0h1m-31 1h1m1 0h1m1 0h4m1 0h1m4 0h3m3 0h2m1 0h2m1 0h5m-32 1h3m3 0h1m1 0h1m4 0h2m2 0h2m6 0h1m1 0h2m2 0h1m-33 1h1m1 0h1m1 0h5m1 0h4m1 0h2m5 0h7m1 0h1m1 0h1m-25 1h5m1 0h4m1 0h1m2 0h3m3 0h2m2 0h1m-33 1h7m3 0h1m1 0h1m3 0h2m1 0h6m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h3m6 0h1m1 0h1m1 0h2m1 0h1m3 0h5m-33 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h1m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m2 0h1m3 0h1m1 0h4m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m2 0h1m2 0h1m3 0h1m1 0h2m1 0h1m-30 1h1m5 0h1m1 0h1m1 0h2m1 0h1m2 0h1m5 0h1m3 0h3m3 0h1m-33 1h7m3 0h3m2 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1"/></svg><b>WhatsApp</b><span>Scannez pour discuter</span></div>
-      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" role="img" aria-label="QR code wechat" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="currentColor" d="M0 0.5h7m1 0h1m3 0h1m1 0h3m1 0h3m2 0h1m2 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h1m2 0h1m3 0h4m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m3 0h3m2 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m2 0h2m2 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m5 0h2m2 0h1m1 0h1m2 0h2m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m2 0h2m2 0h1m1 0h3m4 0h1m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m1 0h3m1 0h6m3 0h2m-25 1h1m1 0h2m1 0h3m3 0h1m3 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h2m-33 1h5m2 0h2m1 0h1m1 0h3m2 0h3m1 0h1m1 0h1m2 0h2m1 0h4m-33 1h2m1 0h1m2 0h1m1 0h1m2 0h3m4 0h1m2 0h1m1 0h7m2 0h1m-32 1h2m2 0h1m4 0h1m1 0h1m2 0h3m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m-30 1h1m2 0h7m1 0h1m1 0h1m2 0h2m7 0h2m2 0h1m-32 1h3m1 0h1m1 0h3m2 0h1m1 0h1m5 0h1m1 0h4m1 0h1m1 0h3m-32 1h1m1 0h1m2 0h2m1 0h5m1 0h1m4 0h2m1 0h1m3 0h1m2 0h1m-30 1h2m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m5 0h2m1 0h4m1 0h2m-27 1h1m1 0h1m3 0h1m1 0h1m3 0h3m1 0h3m2 0h2m1 0h1m-28 1h1m2 0h1m2 0h1m2 0h2m3 0h1m4 0h2m1 0h2m1 0h1m1 0h2m2 0h1m-33 1h3m1 0h5m2 0h1m1 0h3m2 0h1m1 0h3m4 0h2m1 0h2m-31 1h3m1 0h1m4 0h2m5 0h3m2 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-33 1h5m1 0h1m1 0h1m2 0h2m1 0h3m4 0h2m1 0h1m3 0h5m-33 1h5m3 0h3m3 0h4m2 0h3m6 0h1m2 0h1m-30 1h1m1 0h2m1 0h1m6 0h1m1 0h1m1 0h2m1 0h5m1 0h1m1 0h3m-32 1h4m4 0h1m4 0h2m4 0h1m1 0h1m1 0h1m3 0h2m1 0h1m-32 1h1m1 0h2m1 0h3m3 0h4m1 0h1m2 0h1m4 0h5m1 0h1m-23 1h1m1 0h1m1 0h1m1 0h3m2 0h1m4 0h1m3 0h2m1 0h1m-32 1h7m1 0h4m2 0h1m2 0h8m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h2m1 0h2m1 0h3m1 0h1m1 0h2m3 0h4m-32 1h1m1 0h3m1 0h1m4 0h1m2 0h1m1 0h3m1 0h1m2 0h6m1 0h1m-31 1h1m1 0h3m1 0h1m1 0h1m1 0h3m3 0h1m2 0h1m1 0h2m1 0h2m1 0h1m4 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h4m5 0h2m2 0h2m1 0h1m-30 1h1m5 0h1m4 0h4m2 0h1m2 0h1m2 0h3m1 0h2m3 0h1m-33 1h7m1 0h1m1 0h1m2 0h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1"/></svg><b>WeChat</b><span>Scannez pour m'ajouter</span></div>
+      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" role="img" aria-label="QR code whatsapp" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="currentColor" d="M0 0.5h7m2 0h4m1 0h1m2 0h3m3 0h2m1 0h7m-33 1h1m5 0h1m1 0h1m4 0h1m4 0h1m2 0h4m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h2m3 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m3 0h3m9 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h2m7 0h3m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m4 0h2m3 0h4m1 0h1m2 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-24 1h2m1 0h1m1 0h5m1 0h1m1 0h2m-23 1h3m1 0h2m2 0h1m2 0h2m1 0h2m1 0h2m1 0h1m8 0h2m-29 1h1m4 0h2m2 0h3m3 0h4m1 0h1m2 0h2m1 0h4m-30 1h1m2 0h2m1 0h1m1 0h1m1 0h2m1 0h2m3 0h1m1 0h7m2 0h1m-33 1h1m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m3 0h1m1 0h1m3 0h4m1 0h1m2 0h1m-33 1h1m3 0h1m1 0h4m3 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m1 0h1m1 0h1m-30 1h2m3 0h4m1 0h2m2 0h1m1 0h1m1 0h3m3 0h2m1 0h1m1 0h1m-32 1h1m2 0h4m1 0h2m1 0h1m1 0h4m1 0h2m4 0h1m1 0h3m1 0h1m-31 1h1m2 0h2m7 0h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h2m2 0h2m-30 1h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2m1 0h3m2 0h2m1 0h2m-27 1h2m2 0h2m1 0h1m2 0h2m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m2 0h1m-33 1h3m1 0h1m1 0h1m1 0h6m1 0h2m3 0h1m3 0h1m2 0h2m1 0h1m-31 1h2m3 0h1m1 0h3m1 0h3m1 0h2m1 0h1m1 0h1m3 0h3m1 0h1m2 0h2m-31 1h1m3 0h2m2 0h2m1 0h1m2 0h1m2 0h3m1 0h1m4 0h5m-33 1h3m4 0h1m1 0h1m5 0h2m1 0h4m3 0h1m4 0h1m1 0h1m-31 1h1m1 0h1m1 0h4m1 0h1m4 0h3m3 0h2m1 0h2m1 0h5m-32 1h3m3 0h1m1 0h1m4 0h2m2 0h2m6 0h1m1 0h2m2 0h1m-33 1h1m1 0h1m1 0h5m1 0h4m1 0h2m5 0h7m1 0h1m1 0h1m-25 1h5m1 0h4m1 0h1m2 0h3m3 0h2m2 0h1m-33 1h7m3 0h1m1 0h1m3 0h2m1 0h6m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h3m6 0h1m1 0h1m1 0h2m1 0h1m3 0h5m-33 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h1m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m2 0h1m3 0h1m1 0h4m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m2 0h1m2 0h1m3 0h1m1 0h2m1 0h1m-30 1h1m5 0h1m1 0h1m1 0h2m1 0h1m2 0h1m5 0h1m3 0h3m3 0h1m-33 1h7m3 0h3m2 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1"/></svg><b>WhatsApp</b><span data-i18n="qr.wa">Scannez pour discuter</span></div>
+      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" role="img" aria-label="QR code wechat" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="currentColor" d="M0 0.5h7m1 0h1m3 0h1m1 0h3m1 0h3m2 0h1m2 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h1m2 0h1m3 0h4m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m3 0h3m2 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m2 0h2m2 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m5 0h2m2 0h1m1 0h1m2 0h2m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m2 0h2m2 0h1m1 0h3m4 0h1m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m1 0h3m1 0h6m3 0h2m-25 1h1m1 0h2m1 0h3m3 0h1m3 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h2m-33 1h5m2 0h2m1 0h1m1 0h3m2 0h3m1 0h1m1 0h1m2 0h2m1 0h4m-33 1h2m1 0h1m2 0h1m1 0h1m2 0h3m4 0h1m2 0h1m1 0h7m2 0h1m-32 1h2m2 0h1m4 0h1m1 0h1m2 0h3m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m-30 1h1m2 0h7m1 0h1m1 0h1m2 0h2m7 0h2m2 0h1m-32 1h3m1 0h1m1 0h3m2 0h1m1 0h1m5 0h1m1 0h4m1 0h1m1 0h3m-32 1h1m1 0h1m2 0h2m1 0h5m1 0h1m4 0h2m1 0h1m3 0h1m2 0h1m-30 1h2m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m5 0h2m1 0h4m1 0h2m-27 1h1m1 0h1m3 0h1m1 0h1m3 0h3m1 0h3m2 0h2m1 0h1m-28 1h1m2 0h1m2 0h1m2 0h2m3 0h1m4 0h2m1 0h2m1 0h1m1 0h2m2 0h1m-33 1h3m1 0h5m2 0h1m1 0h3m2 0h1m1 0h3m4 0h2m1 0h2m-31 1h3m1 0h1m4 0h2m5 0h3m2 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-33 1h5m1 0h1m1 0h1m2 0h2m1 0h3m4 0h2m1 0h1m3 0h5m-33 1h5m3 0h3m3 0h4m2 0h3m6 0h1m2 0h1m-30 1h1m1 0h2m1 0h1m6 0h1m1 0h1m1 0h2m1 0h5m1 0h1m1 0h3m-32 1h4m4 0h1m4 0h2m4 0h1m1 0h1m1 0h1m3 0h2m1 0h1m-32 1h1m1 0h2m1 0h3m3 0h4m1 0h1m2 0h1m4 0h5m1 0h1m-23 1h1m1 0h1m1 0h1m1 0h3m2 0h1m4 0h1m3 0h2m1 0h1m-32 1h7m1 0h4m2 0h1m2 0h8m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h2m1 0h2m1 0h3m1 0h1m1 0h2m3 0h4m-32 1h1m1 0h3m1 0h1m4 0h1m2 0h1m1 0h3m1 0h1m2 0h6m1 0h1m-31 1h1m1 0h3m1 0h1m1 0h1m1 0h3m3 0h1m2 0h1m1 0h2m1 0h2m1 0h1m4 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h4m5 0h2m2 0h2m1 0h1m-30 1h1m5 0h1m4 0h4m2 0h1m2 0h1m2 0h3m1 0h2m3 0h1m-33 1h7m1 0h1m1 0h1m2 0h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1"/></svg><b>WeChat</b><span data-i18n="qr.wc">Scannez pour m'ajouter</span></div>
     </div>
   </div>
 </section>
@@ -367,72 +373,205 @@ dialog::backdrop{background:rgba(8,8,8,.75)}
 <footer>
   <div class="wrap">
     <div class="fcols">
-      <div class="fbrand"><span class="logo">MOUNKO</span><p>Mobilier d'extérieur à Jarry, Guadeloupe. Salons de jardin, repas, détente et ombrage.</p></div>
-      <div><h4>Catalogue</h4><ul id="fcats"></ul></div>
-      <div><h4>MOUNKO</h4><ul><li><a href="#selection">Sélection du moment</a></li><li><a href="#collections">Collections</a></li><li><a href="#catalogue">Tous les modèles</a></li></ul></div>
-      <div><h4>Besoin d'aide</h4><ul><li><a href="#commander">Comment commander</a></li><li><a href="#contact">Contact</a></li><li><a href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://u.wechat.com/kIHDQxz6X9xz9_CbBw0NeXU?s=2" target="_blank" rel="noopener">WeChat</a></li></ul></div>
+      <div class="fbrand"><span class="logo">MOUNKO</span><p data-i18n="f.p">Mobilier d'extérieur à Jarry, Guadeloupe. Salons de jardin, repas, détente et ombrage.</p></div>
+      <div><h4 data-i18n="nav.catalogue">Catalogue</h4><ul id="fcats"></ul></div>
+      <div><h4>MOUNKO</h4><ul><li><a href="#selection" data-i18n="f.sel">Sélection du moment</a></li><li><a href="#collections" data-i18n="nav.collections">Collections</a></li><li><a href="#catalogue" data-i18n="f.all">Tous les modèles</a></li></ul></div>
+      <div><h4 data-i18n="f.help">Besoin d'aide</h4><ul><li><a href="#commander" data-i18n="f.how">Comment commander</a></li><li><a href="#contact" data-i18n="nav.contact">Contact</a></li><li><a href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://u.wechat.com/kIHDQxz6X9xz9_CbBw0NeXU?s=2" target="_blank" rel="noopener">WeChat</a></li></ul></div>
     </div>
-    <div class="legal"><span>© 2026 MOUNKO · Jarry, Guadeloupe</span><span>Photos non contractuelles. Couleurs données à titre indicatif.</span></div>
+    <div class="legal"><span data-i18n="f.copy">© 2026 MOUNKO · Jarry, Guadeloupe</span><span data-i18n="f.legal">Photos non contractuelles. Couleurs données à titre indicatif.</span></div>
   </div>
 </footer>
 
-<dialog id="lb" aria-label="Détail du modèle">
+<dialog id="lb" aria-label="Détail du modèle" data-i18n-attr="aria-label:lb.aria">
   <div class="lb">
     <img id="lb-img" alt="">
     <div class="info">
       <span class="kicker" id="lb-cat"></span>
       <h3 id="lb-ref"></h3>
-      <p class="note">Pour un devis, envoyez cette référence sur WhatsApp ou WeChat avec la quantité souhaitée.</p>
+      <p class="note" data-i18n="lb.note">Pour un devis, envoyez cette référence sur WhatsApp ou WeChat avec la quantité souhaitée.</p>
       <div class="row">
-        <a class="btn" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Demander un devis</a>
-        <button class="btn line" id="lb-copy" type="button">Copier la référence</button>
+        <a class="btn" href="https://wa.me/message/CI72BOBEFAPXM1?src=qr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span data-i18n="quote">Demander un devis</span></a>
+        <button class="btn line" id="lb-copy" type="button" data-i18n="lb.copy">Copier la référence</button>
       </div>
-      <div class="nav"><button class="btn line" id="lb-prev" type="button">← Précédent</button><button class="btn line" id="lb-next" type="button">Suivant →</button></div>
+      <div class="nav"><button class="btn line" id="lb-prev" type="button" data-i18n="lb.prev">← Précédent</button><button class="btn line" id="lb-next" type="button" data-i18n="lb.next">Suivant →</button></div>
     </div>
   </div>
-  <button class="close" id="lb-close" type="button" aria-label="Fermer">×</button>
+  <button class="close" id="lb-close" type="button" aria-label="Fermer" data-i18n-attr="aria-label:lb.close">×</button>
 </dialog>
 <div class="toast" id="toast" hidden></div>
 
 <script>
 const P=[["MK-8001","img/MK-8001.webp","salons"],["MK-8002","img/MK-8002.webp","salons"],["MK-8003","img/MK-8003.webp","salons"],["MK-8005","img/MK-8005.webp","salons"],["MK-8006","img/MK-8006.webp","salons"],["MK-8007","img/MK-8007.webp","salons"],["MK-8008","img/MK-8008.webp","salons"],["MK-8009","img/MK-8009.webp","salons"],["MK-8010","img/MK-8010.webp","salons"],["MK-8011","img/MK-8011.webp","salons"],["MK-8012","img/MK-8012.webp","salons"],["MK-8013","img/MK-8013.webp","salons"],["MK-8015","img/MK-8015.webp","salons"],["MK-8016","img/MK-8016.webp","salons"],["MK-8017","img/MK-8017.webp","salons"],["MK-8018","img/MK-8018.webp","salons"],["MK-8019","img/MK-8019.webp","salons"],["MK-8020","img/MK-8020.webp","salons"],["MK-8021","img/MK-8021.webp","salons"],["MK-8022","img/MK-8022.webp","salons"],["MK-8023","img/MK-8023.webp","salons"],["MK-8025","img/MK-8025.webp","salons"],["MK-8026","img/MK-8026.webp","salons"],["MK-8027","img/MK-8027.webp","salons"],["MK-8028","img/MK-8028.webp","salons"],["MK-8029","img/MK-8029.webp","salons"],["MK-8030","img/MK-8030.webp","salons"],["MK-8031","img/MK-8031.webp","salons"],["MK-8032","img/MK-8032.webp","salons"],["MK-8033","img/MK-8033.webp","salons"],["MK-8035","img/MK-8035.webp","salons"],["MK-8036","img/MK-8036.webp","salons"],["MK-8037","img/MK-8037.webp","salons"],["MK-8038","img/MK-8038.webp","salons"],["MK-8039","img/MK-8039.webp","salons"],["MK-8050","img/MK-8050.webp","salons"],["MK-8051","img/MK-8051.webp","salons"],["MK-8052","img/MK-8052.webp","salons"],["MK-8053","img/MK-8053.webp","salons"],["MK-8055","img/MK-8055.webp","salons"],["MK-8056","img/MK-8056.webp","salons"],["MK-8057","img/MK-8057.webp","salons"],["MK-8058","img/MK-8058.webp","salons"],["MK-8059","img/MK-8059.webp","salons"],["MK-8060","img/MK-8060.webp","salons"],["MK-8061","img/MK-8061.webp","salons"],["MK-8062","img/MK-8062.webp","salons"],["MK-8063","img/MK-8063.webp","salons"],["MK-8065","img/MK-8065.webp","salons"],["MK-8066","img/MK-8066.webp","salons"],["MK-8067","img/MK-8067.webp","salons"],["MK-8068","img/MK-8068.webp","salons"],["MK-8069","img/MK-8069.webp","salons"],["MK-8070","img/MK-8070.webp","salons"],["MK-8071","img/MK-8071.webp","salons"],["MK-8072","img/MK-8072.webp","salons"],["MK-8073","img/MK-8073.webp","salons"],["MK-8075","img/MK-8075.webp","salons"],["MK-8076","img/MK-8076.webp","salons"],["MK-8077","img/MK-8077.webp","salons"],["MK-8078","img/MK-8078.webp","salons"],["MK-8079","img/MK-8079.webp","salons"],["MK-8080","img/MK-8080.webp","salons"],["MK-8081","img/MK-8081.webp","salons"],["MK-8082","img/MK-8082.webp","salons"],["MK-8083","img/MK-8083.webp","salons"],["MK-8085","img/MK-8085.webp","salons"],["MK-8086","img/MK-8086.webp","salons"],["MK-8087","img/MK-8087.webp","salons"],["MK-8088","img/MK-8088.webp","salons"],["MK-8089","img/MK-8089.webp","salons"],["MK-8090","img/MK-8090.webp","salons"],["MK-8091","img/MK-8091.webp","salons"],["MK-8092","img/MK-8092.webp","salons"],["MK-8093","img/MK-8093.webp","salons"],["MK-8095","img/MK-8095.webp","salons"],["MK-8096","img/MK-8096.webp","salons"],["MK-8097","img/MK-8097.webp","salons"],["MK-8098","img/MK-8098.webp","salons"],["MK-8099","img/MK-8099.webp","salons"],["MK-8100","img/MK-8100.webp","salons"],["MK-8101","img/MK-8101.webp","salons"],["MK-8102","img/MK-8102.webp","salons"],["MK-8103","img/MK-8103.webp","salons"],["MK-8105","img/MK-8105.webp","salons"],["MK-8106","img/MK-8106.webp","salons"],["MK-8107","img/MK-8107.webp","salons"],["MK-8108","img/MK-8108.webp","salons"],["MK-8109","img/MK-8109.webp","salons"],["MK-8110","img/MK-8110.webp","salons"],["MK-8111","img/MK-8111.webp","salons"],["MK-8112","img/MK-8112.webp","salons"],["MK-8113","img/MK-8113.webp","salons"],["MK-8115","img/MK-8115.webp","salons"],["MK-8116","img/MK-8116.webp","salons"],["MK-8117","img/MK-8117.webp","salons"],["MK-8118","img/MK-8118.webp","salons"],["MK-8119","img/MK-8119.webp","salons"],["MK-8120","img/MK-8120.webp","salons"],["MK-8121","img/MK-8121.webp","salons"],["MK-8122","img/MK-8122.webp","salons"],["MK-8123","img/MK-8123.webp","salons"],["MK-8125","img/MK-8125.webp","salons"],["MK-8126","img/MK-8126.webp","salons"],["MK-8127","img/MK-8127.webp","salons"],["MK-8128","img/MK-8128.webp","salons"],["MK-8129","img/MK-8129.webp","salons"],["MK-8130","img/MK-8130.webp","salons"],["MK-8131","img/MK-8131.webp","salons"],["MK-8132","img/MK-8132.webp","salons"],["MK-8133","img/MK-8133.webp","salons"],["MK-8135","img/MK-8135.webp","salons"],["MK-8136","img/MK-8136.webp","salons"],["MK-8137","img/MK-8137.webp","salons"],["MK-8138","img/MK-8138.webp","salons"],["MK-8139","img/MK-8139.webp","salons"],["MK-8150","img/MK-8150.webp","salons"],["MK-8151","img/MK-8151.webp","salons"],["MK-8152","img/MK-8152.webp","repas"],["MK-8153","img/MK-8153.webp","repas"],["MK-8155","img/MK-8155.webp","repas"],["MK-8156","img/MK-8156.webp","repas"],["MK-8157","img/MK-8157.webp","repas"],["MK-8158","img/MK-8158.webp","repas"],["MK-8159","img/MK-8159.webp","repas"],["MK-8160","img/MK-8160.webp","repas"],["MK-8161","img/MK-8161.webp","repas"],["MK-8162","img/MK-8162.webp","repas"],["MK-8163","img/MK-8163.webp","repas"],["MK-8165","img/MK-8165.webp","repas"],["MK-8166","img/MK-8166.webp","repas"],["MK-8167","img/MK-8167.webp","repas"],["MK-8168","img/MK-8168.webp","repas"],["MK-8169","img/MK-8169.webp","repas"],["MK-8170","img/MK-8170.webp","repas"],["MK-8171","img/MK-8171.webp","repas"],["MK-8172","img/MK-8172.webp","repas"],["MK-8173","img/MK-8173.webp","repas"],["MK-8175","img/MK-8175.webp","repas"],["MK-8176","img/MK-8176.webp","repas"],["MK-8177","img/MK-8177.webp","repas"],["MK-8178","img/MK-8178.webp","repas"],["MK-8179","img/MK-8179.webp","repas"],["MK-8180","img/MK-8180.webp","repas"],["MK-8181","img/MK-8181.webp","repas"],["MK-8182","img/MK-8182.webp","repas"],["MK-8183","img/MK-8183.webp","repas"],["MK-8185","img/MK-8185.webp","repas"],["MK-8186","img/MK-8186.webp","repas"],["MK-8187","img/MK-8187.webp","repas"],["MK-8188","img/MK-8188.webp","fauteuils"],["MK-8189","img/MK-8189.webp","fauteuils"],["MK-8190","img/MK-8190.webp","fauteuils"],["MK-8191","img/MK-8191.webp","fauteuils"],["MK-8192","img/MK-8192.webp","fauteuils"],["MK-8193","img/MK-8193.webp","fauteuils"],["MK-8195","img/MK-8195.webp","fauteuils"],["MK-8196","img/MK-8196.webp","fauteuils"],["MK-8197","img/MK-8197.webp","fauteuils"],["MK-8198","img/MK-8198.webp","fauteuils"],["MK-8199","img/MK-8199.webp","fauteuils"],["MK-8200","img/MK-8200.webp","fauteuils"],["MK-8201","img/MK-8201.webp","fauteuils"],["MK-8202","img/MK-8202.webp","fauteuils"],["MK-8203","img/MK-8203.webp","fauteuils"],["MK-8205","img/MK-8205.webp","fauteuils"],["MK-8206","img/MK-8206.webp","fauteuils"],["MK-8207","img/MK-8207.webp","fauteuils"],["MK-8208","img/MK-8208.webp","fauteuils"],["MK-8209","img/MK-8209.webp","fauteuils"],["MK-8210","img/MK-8210.webp","fauteuils"],["MK-8211","img/MK-8211.webp","fauteuils"],["MK-8212","img/MK-8212.webp","fauteuils"],["MK-8213","img/MK-8213.webp","fauteuils"],["MK-8215","img/MK-8215.webp","fauteuils"],["MK-8216","img/MK-8216.webp","fauteuils"],["MK-8217","img/MK-8217.webp","fauteuils"],["MK-8218","img/MK-8218.webp","fauteuils"],["MK-8219","img/MK-8219.webp","fauteuils"],["MK-8220","img/MK-8220.webp","fauteuils"],["MK-8221","img/MK-8221.webp","fauteuils"],["MK-8222","img/MK-8222.webp","fauteuils"],["MK-8223","img/MK-8223.webp","bar"],["MK-8225","img/MK-8225.webp","bar"],["MK-8226","img/MK-8226.webp","bar"],["MK-8227","img/MK-8227.webp","bar"],["MK-8228","img/MK-8228.webp","bar"],["MK-8229","img/MK-8229.webp","bar"],["MK-8230","img/MK-8230.webp","bar"],["MK-8231","img/MK-8231.webp","bar"],["MK-8232","img/MK-8232.webp","bar"],["MK-8233","img/MK-8233.webp","bar"],["MK-8235","img/MK-8235.webp","bar"],["MK-8236","img/MK-8236.webp","bar"],["MK-8237","img/MK-8237.webp","daybeds"],["MK-8238","img/MK-8238.webp","daybeds"],["MK-8239","img/MK-8239.webp","daybeds"],["MK-8250","img/MK-8250.webp","daybeds"],["MK-8251","img/MK-8251.webp","daybeds"],["MK-8252","img/MK-8252.webp","daybeds"],["MK-8253","img/MK-8253.webp","daybeds"],["MK-8255","img/MK-8255.webp","daybeds"],["MK-8256","img/MK-8256.webp","daybeds"],["MK-8257","img/MK-8257.webp","daybeds"],["MK-8258","img/MK-8258.webp","daybeds"],["MK-8259","img/MK-8259.webp","daybeds"],["MK-8260","img/MK-8260.webp","daybeds"],["MK-8261","img/MK-8261.webp","daybeds"],["MK-8262","img/MK-8262.webp","daybeds"],["MK-8263","img/MK-8263.webp","daybeds"],["MK-8265","img/MK-8265.webp","daybeds"],["MK-8266","img/MK-8266.webp","daybeds"],["MK-8267","img/MK-8267.webp","daybeds"],["MK-8268","img/MK-8268.webp","daybeds"],["MK-8269","img/MK-8269.webp","daybeds"],["MK-8270","img/MK-8270.webp","daybeds"],["MK-8271","img/MK-8271.webp","daybeds"],["MK-8272","img/MK-8272.webp","daybeds"],["MK-8273","img/MK-8273.webp","daybeds"],["MK-8275","img/MK-8275.webp","daybeds"],["MK-8276","img/MK-8276.webp","daybeds"],["MK-8277","img/MK-8277.webp","daybeds"],["MK-8278","img/MK-8278.webp","transats"],["MK-8279","img/MK-8279.webp","transats"],["MK-8280","img/MK-8280.webp","transats"],["MK-8281","img/MK-8281.webp","transats"],["MK-8282","img/MK-8282.webp","transats"],["MK-8283","img/MK-8283.webp","transats"],["MK-8285","img/MK-8285.webp","transats"],["MK-8286","img/MK-8286.webp","transats"],["MK-8287","img/MK-8287.webp","transats"],["MK-8288","img/MK-8288.webp","transats"],["MK-8289","img/MK-8289.webp","transats"],["MK-8290","img/MK-8290.webp","transats"],["MK-8291","img/MK-8291.webp","transats"],["MK-8292","img/MK-8292.webp","transats"],["MK-8293","img/MK-8293.webp","transats"],["MK-8295","img/MK-8295.webp","transats"],["MK-8296","img/MK-8296.webp","suspendus"],["MK-8297","img/MK-8297.webp","suspendus"],["MK-8298","img/MK-8298.webp","suspendus"],["MK-8299","img/MK-8299.webp","suspendus"],["MK-8300","img/MK-8300.webp","suspendus"],["MK-8301","img/MK-8301.webp","suspendus"],["MK-8302","img/MK-8302.webp","suspendus"],["MK-8303","img/MK-8303.webp","suspendus"],["MK-8305","img/MK-8305.webp","suspendus"],["MK-8306","img/MK-8306.webp","suspendus"],["MK-8307","img/MK-8307.webp","suspendus"],["MK-8308","img/MK-8308.webp","suspendus"],["MK-8309","img/MK-8309.webp","suspendus"],["MK-8310","img/MK-8310.webp","suspendus"],["MK-8311","img/MK-8311.webp","suspendus"],["MK-8312","img/MK-8312.webp","suspendus"],["MK-8313","img/MK-8313.webp","pergolas"],["MK-8315","img/MK-8315.webp","pergolas"],["MK-8316","img/MK-8316.webp","pergolas"],["MK-8317","img/MK-8317.webp","pergolas"],["MK-8318","img/MK-8318.webp","pergolas"],["MK-8319","img/MK-8319.webp","suspendus"],["MK-8320","img/MK-8320.webp","suspendus"],["MK-8321","img/MK-8321.webp","suspendus"],["MK-8322","img/MK-8322.webp","suspendus"],["MK-8323","img/MK-8323.webp","suspendus"],["MK-8325","img/MK-8325.webp","fauteuils"],["MK-8326","img/MK-8326.webp","fauteuils"],["MK-8327","img/MK-8327.webp","fauteuils"],["MK-8328","img/MK-8328.webp","fauteuils"],["MK-8329","img/MK-8329.webp","fauteuils"],["MK-8330","img/MK-8330.webp","pergolas"],["MK-8331","img/MK-8331.webp","pergolas"],["MK-8332","img/MK-8332.webp","exterieur"],["MK-8333","img/MK-8333.webp","exterieur"],["MK-8335","img/MK-8335.webp","exterieur"],["MK-8336","img/MK-8336.webp","exterieur"],["MK-8337","img/MK-8337.webp","exterieur"],["MK-8338","img/MK-8338.webp","exterieur"],["MK-8339","img/MK-8339.webp","exterieur"],["MK-8350","img/MK-8350.webp","exterieur"],["MK-8351","img/MK-8351.webp","exterieur"],["MK-8352","img/MK-8352.webp","exterieur"],["MK-8353","img/MK-8353.webp","exterieur"],["MK-8355","img/MK-8355.webp","exterieur"],["MK-8356","img/MK-8356.webp","exterieur"],["MK-8357","img/MK-8357.webp","exterieur"],["MK-8358","img/MK-8358.webp","exterieur"],["MK-8359","img/MK-8359.webp","exterieur"],["MK-8360","img/MK-8360.webp","exterieur"],["MK-8361","img/MK-8361.webp","exterieur"],["MK-8362","img/MK-8362.webp","exterieur"],["MK-8363","img/MK-8363.webp","parasols"],["MK-8365","img/MK-8365.webp","parasols"],["MK-8366","img/MK-8366-b.webp","parasols"],["MK-8366","img/MK-8366.webp","parasols"],["MK-8368","img/MK-8368-b.webp","parasols"],["MK-8368","img/MK-8368.webp","parasols"],["MK-8369","img/MK-8369.webp","parasols"],["MK-8370","img/MK-8370.webp","parasols"],["MK-8371","img/MK-8371.webp","parasols"],["MK-8372","img/MK-8372.webp","parasols"]].map(([ref,img,cat])=>({ref,img,cat}));
-const CATS=[
- ['salons','Salons de jardin','MK-8002'],['repas','Ensembles repas','MK-8155'],['fauteuils','Fauteuils & chaises','MK-8200'],
- ['bar','Tables hautes & bar','MK-8233'],['daybeds','Daybeds & lits de jardin','MK-8256'],['transats','Bains de soleil','MK-8290'],
- ['suspendus','Suspendus & balancelles','MK-8303'],['pergolas','Pergolas & tonnelles','MK-8313'],
- ['exterieur','Bancs, tables & jardinières','MK-8338'],['parasols','Parasols','MK-8363']];
+const CATS=[['salons','MK-8002'],['repas','MK-8155'],['fauteuils','MK-8200'],['bar','MK-8233'],['daybeds','MK-8256'],
+ ['transats','MK-8290'],['suspendus','MK-8303'],['pergolas','MK-8313'],['exterieur','MK-8338'],['parasols','MK-8363']];
 const PICKS=['MK-8002','MK-8023','MK-8051','MK-8113','MK-8156','MK-8199','MK-8238','MK-8260','MK-8298','MK-8323','MK-8362','MK-8006'];
-const NAME=Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
+
+const T={
+fr:{
+ title:'MOUNKO Outdoor Furniture',
+ 'aria.menu':'Ouvrir le menu','aria.lang':'Langue',
+ 'nav.collections':'Collections','nav.catalogue':'Catalogue','nav.order':'Commander','nav.contact':'Contact',
+ 'hdr.quote':'Devis WhatsApp',quote:'Demander un devis',
+ 'hero.alt':"Salon de jardin au bord d'une piscine face à la mer",
+ 'hero.k':"Mobilier d'extérieur · Jarry, Guadeloupe",'hero.h1':"Faites de votre extérieur un lieu d'exception",
+ 'sel.k':'Sélection','sel.h':'Notre sélection du moment','sel.prev':'Modèles précédents','sel.next':'Modèles suivants',
+ 'brand.k':'La marque','brand.h':"MOUNKO, l'art de vivre dehors en Guadeloupe",
+ 'brand.p':"Basée à Jarry, MOUNKO réunit des collections de mobilier d'extérieur pensées pour les terrasses, les jardins et les bords de piscine. Salons, repas, détente, ombrage : chaque modèle porte une référence MK pour vous permettre de demander un devis en quelques secondes.",
+ n300:'300 modèles','p1.p':'Un large choix de salons, tables, daybeds, transats, fauteuils suspendus et parasols.',
+ 'p2.h':'10 collections','p2.p':'Des univers clairs pour trouver rapidement le mobilier adapté à votre espace.',
+ 'p3.h':'Accompagnement','p3.p':'Nous vous aidons à choisir votre mobilier, du conseil à la commande.',
+ 'p4.h':'À Jarry','p4.p':'Un interlocuteur local, joignable directement sur WhatsApp et WeChat.',
+ 'col.h':'Trouvez le mobilier de votre extérieur','col.p':'Choisissez une collection pour afficher ses modèles dans le catalogue.',
+ 'cat.k':'Catalogue 2026','cat.h':'Tous nos modèles',
+ 'cat.p':'Notez la référence <span class="ref">MK-xxxx</span> des modèles qui vous plaisent et envoyez-la nous pour recevoir votre devis.',
+ 'cat.filter':'Filtrer par collection','cat.search':'Rechercher une référence',
+ 'cat.empty':'Aucun modèle ne correspond à cette référence. Vérifiez les chiffres ou choisissez « Tout ».',
+ 'cat.more':'Afficher plus de modèles','srv.aria':'Nos services',
+ 'srv1.b':'Devis sur WhatsApp','srv1.s':'Envoyez vos références MK','srv2.b':'Conseil personnalisé','srv2.s':'Un interlocuteur dédié',
+ 'srv3.s':'Catalogue 2026 complet',place:'Jarry, Guadeloupe','srv4.s':'Votre contact local',
+ 'ord.h':'Votre devis en trois étapes',
+ 'st1.h':'Choisissez vos modèles','st1.p':'Parcourez le catalogue et notez la référence de chaque modèle, par exemple <span class="ref">MK-8002</span>.',
+ 'st2.h':'Envoyez les références','st2.p':'Écrivez-nous sur WhatsApp ou WeChat avec les références, les quantités et les coloris souhaités.',
+ 'st3.h':'Recevez votre devis','st3.p':'Nous revenons vers vous avec le prix, les options disponibles et les modalités de commande.',
+ 'ct.h':'Parlons de votre projet','ct.addr':'Adresse','ct.msg':'Messagerie','ct.msgv':'WhatsApp et WeChat',
+ 'ct.wa':'Écrire sur WhatsApp','ct.wc':'Ajouter sur WeChat','qr.wa':'Scannez pour discuter','qr.wc':"Scannez pour m'ajouter",
+ 'f.p':"Mobilier d'extérieur à Jarry, Guadeloupe. Salons de jardin, repas, détente et ombrage.",
+ 'f.sel':'Sélection du moment','f.all':'Tous les modèles','f.help':"Besoin d'aide",'f.how':'Comment commander',
+ 'f.copy':'© 2026 MOUNKO · Jarry, Guadeloupe','f.legal':'Photos non contractuelles. Couleurs données à titre indicatif.',
+ 'lb.aria':'Détail du modèle','lb.note':'Pour un devis, envoyez cette référence sur WhatsApp ou WeChat avec la quantité souhaitée.',
+ 'lb.copy':'Copier la référence','lb.prev':'← Précédent','lb.next':'Suivant →','lb.close':'Fermer',
+ all:'Tout',view:'Voir le modèle',model:'Modèle',
+ models:n=>`${n} modèle${n>1?'s':''}`,containing:q=>`référence contenant « ${q} »`,
+ copied:r=>`${r} copiée`,refis:r=>`Référence : ${r}`,
+ cats:{salons:'Salons de jardin',repas:'Ensembles repas',fauteuils:'Fauteuils & chaises',bar:'Tables hautes & bar',daybeds:'Daybeds & lits de jardin',
+  transats:'Bains de soleil',suspendus:'Suspendus & balancelles',pergolas:'Pergolas & tonnelles',exterieur:'Bancs, tables & jardinières',parasols:'Parasols'}
+},
+en:{
+ title:'MOUNKO Outdoor Furniture',
+ 'aria.menu':'Open menu','aria.lang':'Language',
+ 'nav.collections':'Collections','nav.catalogue':'Catalog','nav.order':'How to order','nav.contact':'Contact',
+ 'hdr.quote':'WhatsApp quote',quote:'Request a quote',
+ 'hero.alt':'Outdoor lounge set by a pool overlooking the sea',
+ 'hero.k':'Outdoor furniture · Jarry, Guadeloupe','hero.h1':'Turn your outdoor space into somewhere exceptional',
+ 'sel.k':'Selection','sel.h':'Our current selection','sel.prev':'Previous models','sel.next':'Next models',
+ 'brand.k':'The brand','brand.h':'MOUNKO, the art of outdoor living in Guadeloupe',
+ 'brand.p':'Based in Jarry, MOUNKO brings together outdoor furniture collections designed for terraces, gardens and poolsides. Lounging, dining, relaxing, shade: every model has an MK reference so you can request a quote in seconds.',
+ n300:'300 models','p1.p':'A wide choice of lounge sets, tables, daybeds, sun loungers, hanging chairs and parasols.',
+ 'p2.h':'10 collections','p2.p':'Clear ranges to quickly find the right furniture for your space.',
+ 'p3.h':'Personal support','p3.p':'We help you choose your furniture, from first advice to your order.',
+ 'p4.h':'In Jarry','p4.p':'A local contact, reachable directly on WhatsApp and WeChat.',
+ 'col.h':'Find furniture for your outdoor space','col.p':'Choose a collection to show its models in the catalog.',
+ 'cat.k':'2026 Catalog','cat.h':'All our models',
+ 'cat.p':'Note the <span class="ref">MK-xxxx</span> reference of the models you like and send it to us to receive your quote.',
+ 'cat.filter':'Filter by collection','cat.search':'Search a reference',
+ 'cat.empty':'No model matches this reference. Check the digits or choose “All”.',
+ 'cat.more':'Show more models','srv.aria':'Our services',
+ 'srv1.b':'Quotes on WhatsApp','srv1.s':'Send your MK references','srv2.b':'Personal advice','srv2.s':'A dedicated contact',
+ 'srv3.s':'Full 2026 catalog',place:'Jarry, Guadeloupe','srv4.s':'Your local contact',
+ 'ord.h':'Your quote in three steps',
+ 'st1.h':'Choose your models','st1.p':'Browse the catalog and note the reference of each model, for example <span class="ref">MK-8002</span>.',
+ 'st2.h':'Send the references','st2.p':'Message us on WhatsApp or WeChat with the references, quantities and colours you want.',
+ 'st3.h':'Receive your quote','st3.p':'We get back to you with the price, the available options and the ordering terms.',
+ 'ct.h':"Let's talk about your project",'ct.addr':'Address','ct.msg':'Messaging','ct.msgv':'WhatsApp and WeChat',
+ 'ct.wa':'Message on WhatsApp','ct.wc':'Add on WeChat','qr.wa':'Scan to chat','qr.wc':'Scan to add me',
+ 'f.p':'Outdoor furniture in Jarry, Guadeloupe. Lounge sets, dining, relaxation and shade.',
+ 'f.sel':'Current selection','f.all':'All models','f.help':'Need help','f.how':'How to order',
+ 'f.copy':'© 2026 MOUNKO · Jarry, Guadeloupe','f.legal':'Photos are not contractually binding. Colours are for reference only.',
+ 'lb.aria':'Model details','lb.note':'For a quote, send this reference on WhatsApp or WeChat with the quantity you need.',
+ 'lb.copy':'Copy reference','lb.prev':'← Previous','lb.next':'Next →','lb.close':'Close',
+ all:'All',view:'View model',model:'Model',
+ models:n=>`${n} model${n>1?'s':''}`,containing:q=>`reference containing “${q}”`,
+ copied:r=>`${r} copied`,refis:r=>`Reference: ${r}`,
+ cats:{salons:'Garden lounge sets',repas:'Dining sets',fauteuils:'Armchairs & chairs',bar:'Bar & high tables',daybeds:'Daybeds & garden beds',
+  transats:'Sun loungers',suspendus:'Hanging chairs & swings',pergolas:'Pergolas & gazebos',exterieur:'Benches, tables & planters',parasols:'Parasols'}
+},
+es:{
+ title:'MOUNKO Outdoor Furniture',
+ 'aria.menu':'Abrir el menú','aria.lang':'Idioma',
+ 'nav.collections':'Colecciones','nav.catalogue':'Catálogo','nav.order':'Cómo pedir','nav.contact':'Contacto',
+ 'hdr.quote':'Presupuesto WhatsApp',quote:'Solicitar presupuesto',
+ 'hero.alt':'Conjunto de jardín junto a una piscina frente al mar',
+ 'hero.k':'Muebles de exterior · Jarry, Guadalupe','hero.h1':'Haga de su exterior un lugar excepcional',
+ 'sel.k':'Selección','sel.h':'Nuestra selección del momento','sel.prev':'Modelos anteriores','sel.next':'Modelos siguientes',
+ 'brand.k':'La marca','brand.h':'MOUNKO, el arte de vivir al aire libre en Guadalupe',
+ 'brand.p':'Con sede en Jarry, MOUNKO reúne colecciones de muebles de exterior pensadas para terrazas, jardines y bordes de piscina. Salones, comedor, descanso, sombra: cada modelo tiene una referencia MK para que pueda solicitar un presupuesto en segundos.',
+ n300:'300 modelos','p1.p':'Una amplia selección de salones, mesas, daybeds, tumbonas, sillones colgantes y sombrillas.',
+ 'p2.h':'10 colecciones','p2.p':'Gamas claras para encontrar rápidamente los muebles adecuados para su espacio.',
+ 'p3.h':'Acompañamiento','p3.p':'Le ayudamos a elegir sus muebles, desde el asesoramiento hasta el pedido.',
+ 'p4.h':'En Jarry','p4.p':'Un contacto local, disponible directamente en WhatsApp y WeChat.',
+ 'col.h':'Encuentre los muebles para su exterior','col.p':'Elija una colección para ver sus modelos en el catálogo.',
+ 'cat.k':'Catálogo 2026','cat.h':'Todos nuestros modelos',
+ 'cat.p':'Anote la referencia <span class="ref">MK-xxxx</span> de los modelos que le gusten y envíenosla para recibir su presupuesto.',
+ 'cat.filter':'Filtrar por colección','cat.search':'Buscar una referencia',
+ 'cat.empty':'Ningún modelo coincide con esta referencia. Compruebe los números o elija «Todo».',
+ 'cat.more':'Ver más modelos','srv.aria':'Nuestros servicios',
+ 'srv1.b':'Presupuestos por WhatsApp','srv1.s':'Envíe sus referencias MK','srv2.b':'Asesoramiento personalizado','srv2.s':'Un contacto dedicado',
+ 'srv3.s':'Catálogo 2026 completo',place:'Jarry, Guadalupe','srv4.s':'Su contacto local',
+ 'ord.h':'Su presupuesto en tres pasos',
+ 'st1.h':'Elija sus modelos','st1.p':'Recorra el catálogo y anote la referencia de cada modelo, por ejemplo <span class="ref">MK-8002</span>.',
+ 'st2.h':'Envíe las referencias','st2.p':'Escríbanos por WhatsApp o WeChat con las referencias, las cantidades y los colores que desea.',
+ 'st3.h':'Reciba su presupuesto','st3.p':'Le respondemos con el precio, las opciones disponibles y las condiciones de pedido.',
+ 'ct.h':'Hablemos de su proyecto','ct.addr':'Dirección','ct.msg':'Mensajería','ct.msgv':'WhatsApp y WeChat',
+ 'ct.wa':'Escribir por WhatsApp','ct.wc':'Agregar en WeChat','qr.wa':'Escanee para chatear','qr.wc':'Escanee para agregarme',
+ 'f.p':'Muebles de exterior en Jarry, Guadalupe. Salones de jardín, comedor, descanso y sombra.',
+ 'f.sel':'Selección del momento','f.all':'Todos los modelos','f.help':'¿Necesita ayuda?','f.how':'Cómo pedir',
+ 'f.copy':'© 2026 MOUNKO · Jarry, Guadalupe','f.legal':'Fotos no contractuales. Colores orientativos.',
+ 'lb.aria':'Detalle del modelo','lb.note':'Para un presupuesto, envíe esta referencia por WhatsApp o WeChat con la cantidad deseada.',
+ 'lb.copy':'Copiar referencia','lb.prev':'← Anterior','lb.next':'Siguiente →','lb.close':'Cerrar',
+ all:'Todo',view:'Ver modelo',model:'Modelo',
+ models:n=>`${n} modelo${n>1?'s':''}`,containing:q=>`referencia que contiene «${q}»`,
+ copied:r=>`${r} copiada`,refis:r=>`Referencia: ${r}`,
+ cats:{salons:'Salones de jardín',repas:'Conjuntos de comedor',fauteuils:'Sillones y sillas',bar:'Mesas altas y bar',daybeds:'Daybeds y camas de jardín',
+  transats:'Tumbonas',suspendus:'Colgantes y columpios',pergolas:'Pérgolas y cenadores',exterieur:'Bancos, mesas y jardineras',parasols:'Sombrillas'}
+}};
+const LANGS=['fr','en','es'];
+let L='fr';
+try{const s=localStorage.getItem('mounko-lang');if(LANGS.includes(s))L=s;else{const n=(navigator.language||'').slice(0,2);if(n==='en'||n==='es')L=n}}catch(_){}
+const t=k=>T[L][k]??T.fr[k];
+const NAME=k=>t('cats')[k];
+
 const STEP=24;
 let cat='all',q='',shown=STEP,list=[],cur=0,lbList=[];
 const $=id=>document.getElementById(id);
 const count=k=>P.filter(p=>p.cat===k).length;
-const card=(p,i,attr,tag)=>`<button class="card" type="button" ${attr}="${i}"><div class="ph"><img src="${p.img}" alt="Modèle ${p.ref}, ${NAME[p.cat]}" loading="lazy" width="900" height="566">${tag?`<span class="tag">${tag}</span>`:''}</div><div><div class="nm">${p.ref}</div><div class="ct">${NAME[p.cat]}</div></div><span class="go">Voir le modèle</span></button>`;
+const card=(p,i,attr,tag)=>`<button class="card" type="button" ${attr}="${i}"><div class="ph"><img src="${p.img}" alt="${t('model')} ${p.ref}, ${NAME(p.cat)}" loading="lazy" width="900" height="566">${tag?`<span class="tag">${tag}</span>`:''}</div><div><div class="nm">${p.ref}</div><div class="ct">${NAME(p.cat)}</div></div><span class="go">${t('view')}</span></button>`;
+
+// static texts
+function applyStatic(){
+  document.documentElement.lang=L;
+  document.title=t('title');
+  document.querySelectorAll('[data-i18n]').forEach(e=>{e.textContent=t(e.dataset.i18n)});
+  document.querySelectorAll('[data-i18n-html]').forEach(e=>{e.innerHTML=t(e.dataset.i18nHtml)});
+  document.querySelectorAll('[data-i18n-attr]').forEach(e=>{e.dataset.i18nAttr.split(';').forEach(pair=>{const[a,k]=pair.split(':');e.setAttribute(a,t(k))})});
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===L));
+}
 
 // header
 const hdr=$('hdr');const onScroll=()=>hdr.classList.toggle('solid',scrollY>40||$('drawer').classList.contains('open'));
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 $('burger').onclick=()=>{const o=$('drawer').classList.toggle('open');$('burger').setAttribute('aria-expanded',o);onScroll()};
 $('drawer').addEventListener('click',e=>{if(e.target.closest('a')){$('drawer').classList.remove('open');$('burger').setAttribute('aria-expanded',false);onScroll()}});
+document.querySelector('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.dataset.lang===L)return;
+  L=b.dataset.lang;try{localStorage.setItem('mounko-lang',L)}catch(_){};buildAll()});
 
 // slider
 const picks=PICKS.map(r=>P.find(p=>p.ref===r)).filter(Boolean);
-$('track').innerHTML=picks.map((p,i)=>`<div class="slide">${card(p,i,'data-s','Sélection')}</div>`).join('');
+function buildSlider(){$('track').innerHTML=picks.map((p,i)=>`<div class="slide">${card(p,i,'data-s',t('sel.k'))}</div>`).join('')}
 $('track').addEventListener('click',e=>{const c=e.target.closest('.card');if(c){lbList=picks;openLb(+c.dataset.s)}});
 const stepW=()=>$('track').querySelector('.slide').getBoundingClientRect().width+20;
 $('prev').onclick=()=>$('track').scrollBy({left:-stepW(),behavior:'smooth'});
 $('next').onclick=()=>$('track').scrollBy({left:stepW(),behavior:'smooth'});
 
-// collections
-$('cols').innerHTML=CATS.map(([k,n,ref])=>{const p=P.find(x=>x.ref===ref&&x.cat===k)||P.find(x=>x.cat===k);
- return `<button class="col" type="button" data-cat="${k}"><div class="ph"><img src="${p.img}" alt="" loading="lazy"></div><div><b>${n}</b><em>${count(k)} modèles</em></div></button>`}).join('');
-$('cols').addEventListener('click',e=>{const t=e.target.closest('.col');if(!t)return;setCat(t.dataset.cat);$('catalogue').scrollIntoView()});
-$('fcats').innerHTML=CATS.map(([k,n])=>`<li><a href="#catalogue" data-cat="${k}">${n}</a></li>`).join('');
+// collections, footer links, chips
+function buildCols(){
+ $('cols').innerHTML=CATS.map(([k,ref])=>{const p=P.find(x=>x.ref===ref&&x.cat===k)||P.find(x=>x.cat===k);
+  return `<button class="col" type="button" data-cat="${k}"><div class="ph"><img src="${p.img}" alt="" loading="lazy"></div><div><b>${NAME(k)}</b><em>${t('models')(count(k))}</em></div></button>`}).join('');
+ $('fcats').innerHTML=CATS.map(([k])=>`<li><a href="#catalogue" data-cat="${k}">${NAME(k)}</a></li>`).join('');
+ $('chips').innerHTML=`<button class="chip" type="button" data-cat="all" aria-pressed="${cat==='all'}">${t('all')}<i>${P.length}</i></button>`+
+  CATS.map(([k])=>`<button class="chip" type="button" data-cat="${k}" aria-pressed="${cat===k}">${NAME(k)}<i>${count(k)}</i></button>`).join('');
+}
+$('cols').addEventListener('click',e=>{const c=e.target.closest('.col');if(!c)return;setCat(c.dataset.cat);$('catalogue').scrollIntoView()});
 $('fcats').addEventListener('click',e=>{const a=e.target.closest('a');if(a)setCat(a.dataset.cat)});
-
-// catalogue
-$('chips').innerHTML=`<button class="chip" type="button" data-cat="all" aria-pressed="true">Tout<i>${P.length}</i></button>`+
- CATS.map(([k,n])=>`<button class="chip" type="button" data-cat="${k}" aria-pressed="false">${n}<i>${count(k)}</i></button>`).join('');
 $('chips').addEventListener('click',e=>{const c=e.target.closest('.chip');if(c)setCat(c.dataset.cat)});
 function setCat(k){cat=k;shown=STEP;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.cat===k));render()}
 $('q').addEventListener('input',e=>{q=e.target.value.replace(/\D/g,'');shown=STEP;render()});
@@ -440,7 +579,7 @@ $('more').addEventListener('click',()=>{shown+=STEP;render()});
 function render(){
   list=P.filter(p=>(cat==='all'||p.cat===cat)&&(!q||p.ref.includes(q)));
   $('grid').innerHTML=list.slice(0,shown).map((p,i)=>card(p,i,'data-i')).join('');
-  $('count').textContent=`${list.length} modèle${list.length>1?'s':''}${cat!=='all'?' · '+NAME[cat]:''}${q?' · référence contenant « '+q+' »':''}`;
+  $('count').textContent=t('models')(list.length)+(cat!=='all'?' · '+NAME(cat):'')+(q?' · '+t('containing')(q):'');
   $('empty').hidden=list.length>0;
   $('more').parentElement.hidden=shown>=list.length;
 }
@@ -448,17 +587,19 @@ $('grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c){l
 
 // lightbox
 const lb=$('lb');
-function openLb(i){cur=(i+lbList.length)%lbList.length;const p=lbList[cur];
-  $('lb-img').src=p.img;$('lb-img').alt=`Modèle ${p.ref}`;$('lb-ref').textContent=p.ref;$('lb-cat').textContent=NAME[p.cat];
-  if(!lb.open)lb.showModal()}
+function fillLb(){const p=lbList[cur];if(!p)return;
+  $('lb-img').src=p.img;$('lb-img').alt=`${t('model')} ${p.ref}`;$('lb-ref').textContent=p.ref;$('lb-cat').textContent=NAME(p.cat)}
+function openLb(i){cur=(i+lbList.length)%lbList.length;fillLb();if(!lb.open)lb.showModal()}
 $('lb-close').onclick=()=>lb.close();
 lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
 $('lb-prev').onclick=()=>openLb(cur-1);$('lb-next').onclick=()=>openLb(cur+1);
 document.addEventListener('keydown',e=>{if(!lb.open)return;if(e.key==='ArrowLeft')openLb(cur-1);if(e.key==='ArrowRight')openLb(cur+1)});
-function toast(m){const t=$('toast');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2200)}
+function toast(m){const el=$('toast');el.textContent=m;el.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>el.hidden=true,2200)}
 $('lb-copy').onclick=()=>{const r=lbList[cur].ref;
-  try{navigator.clipboard.writeText(r).then(()=>toast(`${r} copiée`),()=>toast(`Référence : ${r}`))}catch(_){toast(`Référence : ${r}`)}};
-render();
+  try{navigator.clipboard.writeText(r).then(()=>toast(t('copied')(r)),()=>toast(t('refis')(r)))}catch(_){toast(t('refis')(r))}};
+
+function buildAll(){applyStatic();buildSlider();buildCols();render();if(lb.open)fillLb()}
+buildAll();
 </script>
 
 </body>
